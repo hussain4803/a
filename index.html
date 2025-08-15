@@ -5,35 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>الصفوة - عيادة الأسنان | Al-Safwa Dental Clinic</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Enhanced Custom Cursor with Pink-Purple Theme -->
-    <div class="custom-cursor"></div>
-    <div class="cursor-glow"></div>
-
-    <!-- Hero Section -->
-    <section id="hero" class="hero-section">
-        <div class="hero-background"></div>
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1 class="hero-title">الصفوة</h1>
-                <h2 class="hero-subtitle">Al-Safwa Dental Clinic</h2>
-                <p class="hero-tagline">Excellence in Dental Care</p>
-                <p class="hero-tagline-ar">التميز في رعاية الأسنان</p>
-                <button class="btn btn--primary hero-cta" onclick="scrollToSection('booking')">احجز موعدك الآن</button>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <h2>الصفوة</h2>
+                    <span>Al-Safwa Dental Clinic</span>
+                </div>
+                <div class="nav-links">
+                    <a href="#about">من نحن</a>
+                    <a href="#services">خدماتنا</a>
+                    <a href="#why-us">لماذا نحن</a>
+                    <a href="#contact">اتصل بنا</a>
+                </div>
             </div>
         </div>
-        <div class="hero-particles">
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>الصفوة في طب الأسنان</h1>
+                    <h2>Al-Safwa Dental Clinic</h2>
+                    <p>نحن نقدم أفضل خدمات طب الأسنان بأحدث التقنيات والمعدات الطبية المتطورة</p>
+                    <p class="hero-subtitle">Excellence in dental care with state-of-the-art technology and professional expertise</p>
+                    <a href="#reservation" class="btn btn--primary btn--lg">احجز موعد</a>
+                </div>
+                <div class="hero-image">
+                    <img src="https://pplx-res.cloudinary.com/image/upload/v1755271004/pplx_project_search_images/ae28f77a53dc5dd7dc97d6bc2860883cd835e8f4.png" alt="Modern dental clinic reception">
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about-section">
+    <section id="about" class="about">
         <div class="container">
             <div class="section-header">
                 <h2>من نحن</h2>
@@ -41,43 +53,32 @@
             </div>
             <div class="about-content">
                 <div class="about-text">
-                    <h3>رسالتنا</h3>
-                    <p>نحن في عيادة الصفوة ملتزمون بتقديم أفضل رعاية أسنان شاملة بأعلى معايير الجودة والتميز. نسعى لتحقيق الابتسامة المثالية لكل مريض باستخدام أحدث التقنيات والأساليب الطبية المتطورة.</p>
-                    
-                    <h3>Our Mission</h3>
-                    <p>At Al-Safwa Dental Clinic, we are committed to providing exceptional comprehensive dental care with the highest standards of quality and excellence. We strive to achieve the perfect smile for every patient using the latest technologies and advanced medical techniques.</p>
+                    <p>عيادة الصفوة لطب الأسنان هي رائدة في تقديم خدمات طب الأسنان عالية الجودة في المملكة العربية السعودية. نحن نجمع بين الخبرة الطبية المتقدمة والتكنولوجيا الحديثة لنقدم لمرضانا أفضل النتائج.</p>
+                    <p>Our mission is to provide exceptional dental care using the latest technology and techniques. We are committed to creating beautiful, healthy smiles while ensuring the comfort and satisfaction of our patients.</p>
+                    <div class="credentials">
+                        <div class="credential">
+                            <h4>خبرة أكثر من 15 عاماً</h4>
+                            <p>15+ Years Experience</p>
+                        </div>
+                        <div class="credential">
+                            <h4>أطباء معتمدون</h4>
+                            <p>Certified Specialists</p>
+                        </div>
+                        <div class="credential">
+                            <h4>تقنيات متطورة</h4>
+                            <p>Advanced Technology</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="about-image">
-                    <img src="https://pplx-res.cloudinary.com/image/upload/v1755156606/pplx_project_search_images/b40bc5af0880c59bb85b60b90a101fea1b67f723.png" alt="Modern Dental Clinic Interior">
-                </div>
-            </div>
-            <div class="about-features">
-                <div class="feature-card">
-                    <div class="feature-icon">🏥</div>
-                    <h4>أحدث التقنيات</h4>
-                    <p>Latest Technology</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">👨‍⚕️</div>
-                    <h4>فريق متخصص</h4>
-                    <p>Expert Team</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">⭐</div>
-                    <h4>جودة عالية</h4>
-                    <p>High Quality</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">💎</div>
-                    <h4>خدمة مميزة</h4>
-                    <p>Premium Service</p>
+                    <img src="https://pplx-res.cloudinary.com/image/upload/v1755271004/pplx_project_search_images/11c5a1109c4f96d8dd854d61b6262b1d1fa56715.png" alt="Professional dentist">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="services-section">
+    <section id="services" class="services">
         <div class="container">
             <div class="section-header">
                 <h2>خدماتنا</h2>
@@ -85,119 +86,138 @@
             </div>
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-icon">🦷</div>
                     <h4>طب الأسنان العام</h4>
                     <p>General Dentistry</p>
-                    <span class="service-desc">فحص شامل وعلاج جميع مشاكل الأسنان</span>
+                    <span>فحوصات دورية وعلاج تسوس الأسنان وخدمات الوقاية</span>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">✨</div>
                     <h4>طب الأسنان التجميلي</h4>
                     <p>Cosmetic Dentistry</p>
-                    <span class="service-desc">تحسين شكل ولون الأسنان</span>
+                    <span>تجميل وتبييض الأسنان للحصول على ابتسامة مثالية</span>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">🦷</div>
                     <h4>تقويم الأسنان</h4>
                     <p>Orthodontics</p>
-                    <span class="service-desc">تعديل وضعية الأسنان والفكين</span>
+                    <span>تقويم الأسنان التقليدي والشفاف لتحسين شكل الأسنان</span>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">🦷</div>
+                    <h4>جراحة الفم</h4>
+                    <p>Oral Surgery</p>
+                    <span>إجراءات جراحية متخصصة بأحدث التقنيات</span>
+                </div>
+                <div class="service-card">
                     <h4>زراعة الأسنان</h4>
                     <p>Dental Implants</p>
-                    <span class="service-desc">تعويض الأسنان المفقودة</span>
+                    <span>زراعة أسنان طبيعية المظهر ودائمة</span>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">💎</div>
                     <h4>تبييض الأسنان</h4>
                     <p>Teeth Whitening</p>
-                    <span class="service-desc">ابتسامة بيضاء ومشرقة</span>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🦷</div>
-                    <h4>علاج العصب</h4>
-                    <p>Root Canal</p>
-                    <span class="service-desc">علاج جذور الأسنان المتضررة</span>
+                    <span>تبييض احترافي آمن وفعال للأسنان</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Booking Section -->
-    <section id="booking" class="booking-section">
+    <!-- Why Choose Us Section -->
+    <section id="why-us" class="why-us">
         <div class="container">
             <div class="section-header">
-                <h2>احجز موعدك</h2>
-                <h3>Book Your Appointment</h3>
+                <h2>لماذا تختار الصفوة؟</h2>
+                <h3>Why Choose Al-Safwa?</h3>
             </div>
-            <div class="booking-content">
-                <div class="booking-form-container">
-                    <form id="bookingForm" class="booking-form">
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-image">
+                        <img src="https://pplx-res.cloudinary.com/image/upload/v1755271004/pplx_project_search_images/76b481247b1b9c3ee5a57d0a050e3f5c10e7b5da.png" alt="Modern equipment">
+                    </div>
+                    <h4>معدات حديثة</h4>
+                    <p>نستخدم أحدث المعدات والتقنيات في مجال طب الأسنان</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-image">
+                        <img src="https://pplx-res.cloudinary.com/image/upload/v1754856442/pplx_project_search_images/7149543b558d2df203303777e56c451aeec6df2d.png" alt="Professional staff">
+                    </div>
+                    <h4>فريق متخصص</h4>
+                    <p>أطباء أسنان معتمدون وذوو خبرة عالية في جميع التخصصات</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-image">
+                        <img src="https://pplx-res.cloudinary.com/image/upload/v1755271004/pplx_project_search_images/60a7f5688852f2de5353cba6068986e2cb4be72a.png" alt="Patient satisfaction">
+                    </div>
+                    <h4>رضا المرضى</h4>
+                    <p>نحرص على راحة مرضانا وتحقيق أفضل النتائج العلاجية</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservation Section -->
+    <section id="reservation" class="reservation">
+        <div class="container">
+            <div class="section-header">
+                <h2>احجز موعدك الآن</h2>
+                <h3>Book Your Appointment</h3>
+                <p>احجز موعداً معنا للحصول على أفضل خدمات طب الأسنان</p>
+            </div>
+            <div class="reservation-content">
+                <div class="reservation-image">
+                    <img src="https://pplx-res.cloudinary.com/image/upload/v1755271004/pplx_project_search_images/ba7579dcf712dbc354b8d02750923b998e5ada06.png" alt="Dentist showing appointment card">
+                </div>
+                <div class="reservation-form-container">
+                    <form id="reservationForm" class="reservation-form">
                         <div class="form-group">
-                            <label for="patientName" class="form-label">الاسم الكامل / Full Name</label>
-                            <input type="text" id="patientName" name="patientName" class="form-control" required>
+                            <label for="fullName" class="form-label">الاسم الكامل / Full Name *</label>
+                            <input type="text" id="fullName" name="fullName" class="form-control" required>
                         </div>
+                        
                         <div class="form-group">
-                            <label for="patientPhone" class="form-label">رقم الجوال / Phone Number</label>
-                            <input type="tel" id="patientPhone" name="patientPhone" class="form-control" required>
+                            <label for="email" class="form-label">البريد الإلكتروني / Email *</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
                         </div>
+                        
                         <div class="form-group">
-                            <label for="patientEmail" class="form-label">البريد الإلكتروني / Email</label>
-                            <input type="email" id="patientEmail" name="patientEmail" class="form-control" required>
+                            <label for="phone" class="form-label">رقم الهاتف / Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" class="form-control" required>
                         </div>
+                        
                         <div class="form-group">
-                            <label for="serviceType" class="form-label">نوع الخدمة / Service Type</label>
-                            <select id="serviceType" name="serviceType" class="form-control" required>
+                            <label for="preferredDate" class="form-label">التاريخ المفضل / Preferred Date</label>
+                            <input type="date" id="preferredDate" name="preferredDate" class="form-control">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service" class="form-label">نوع الخدمة / Service Needed</label>
+                            <select id="service" name="service" class="form-control">
                                 <option value="">اختر الخدمة / Select Service</option>
                                 <option value="general">طب الأسنان العام / General Dentistry</option>
                                 <option value="cosmetic">طب الأسنان التجميلي / Cosmetic Dentistry</option>
                                 <option value="orthodontics">تقويم الأسنان / Orthodontics</option>
+                                <option value="surgery">جراحة الفم / Oral Surgery</option>
                                 <option value="implants">زراعة الأسنان / Dental Implants</option>
                                 <option value="whitening">تبييض الأسنان / Teeth Whitening</option>
-                                <option value="root-canal">علاج العصب / Root Canal</option>
                             </select>
                         </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="appointmentDate" class="form-label">التاريخ المفضل / Preferred Date</label>
-                                <input type="date" id="appointmentDate" name="appointmentDate" class="form-control" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="appointmentTime" class="form-label">الوقت المفضل / Preferred Time</label>
-                                <select id="appointmentTime" name="appointmentTime" class="form-control" required>
-                                    <option value="">اختر الوقت / Select Time</option>
-                                    <option value="09:00">9:00 AM</option>
-                                    <option value="10:00">10:00 AM</option>
-                                    <option value="11:00">11:00 AM</option>
-                                    <option value="14:00">2:00 PM</option>
-                                    <option value="15:00">3:00 PM</option>
-                                    <option value="16:00">4:00 PM</option>
-                                    <option value="17:00">5:00 PM</option>
-                                    <option value="18:00">6:00 PM</option>
-                                </select>
-                            </div>
-                        </div>
+                        
                         <div class="form-group">
                             <label for="notes" class="form-label">ملاحظات إضافية / Additional Notes</label>
-                            <textarea id="notes" name="notes" class="form-control" rows="4" placeholder="أي ملاحظات أو تفاصيل إضافية..."></textarea>
+                            <textarea id="notes" name="notes" class="form-control" rows="4"></textarea>
                         </div>
-                        <button type="submit" class="btn btn--primary btn--full-width">
-                            <span class="btn-text">احجز الموعد / Book Appointment</span>
-                            <span class="btn-loader hidden">جاري الحجز... / Booking...</span>
+                        
+                        <button type="submit" class="btn btn--primary btn--full-width" id="submitBtn">
+                            احجز موعد الآن / Book Appointment Now
                         </button>
                     </form>
-                </div>
-                <div class="booking-info">
-                    <div class="clinic-image">
-                        <img src="https://pplx-res.cloudinary.com/image/upload/v1755156604/pplx_project_search_images/2d0c271cbe3109a2052026121c1d622b34311b72.png" alt="Professional Dental Equipment">
+                    
+                    <div id="successMessage" class="success-message hidden">
+                        <h4>تم إرسال طلب الحجز بنجاح!</h4>
+                        <p>سيتم التواصل معك قريباً لتأكيد الموعد. تحقق من بريدك الإلكتروني للحصول على تفاصيل الحجز.</p>
+                        <p><strong>Booking request sent successfully!</strong> We will contact you soon to confirm your appointment. Check your email for booking details.</p>
                     </div>
-                    <div class="booking-details">
-                        <h4>ساعات العمل</h4>
-                        <p>السبت - الخميس: 9:00 ص - 9:00 م</p>
-                        <p>الجمعة: 4:00 م - 9:00 م</p>
-                        <p>Saturday - Thursday: 9:00 AM - 9:00 PM</p>
-                        <p>Friday: 4:00 PM - 9:00 PM</p>
+                    
+                    <div id="errorMessage" class="error-message hidden">
+                        <h4>حدث خطأ في إرسال الطلب</h4>
+                        <p>يرجى المحاولة مرة أخرى أو الاتصال بنا مباشرة.</p>
                     </div>
                 </div>
             </div>
@@ -205,7 +225,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact-section">
+    <section id="contact" class="contact">
         <div class="container">
             <div class="section-header">
                 <h2>تواصل معنا</h2>
@@ -214,132 +234,48 @@
             <div class="contact-content">
                 <div class="contact-info">
                     <div class="contact-item">
-                        <div class="contact-icon">📞</div>
-                        <div class="contact-details">
-                            <h4>الهاتف / Phone</h4>
-                            <p>+966 11 234 5678</p>
-                        </div>
+                        <h4>العنوان / Address</h4>
+                        <p>الرياض، المملكة العربية السعودية</p>
+                        <p>Riyadh, Saudi Arabia</p>
                     </div>
                     <div class="contact-item">
-                        <div class="contact-icon">✉️</div>
-                        <div class="contact-details">
-                            <h4>البريد الإلكتروني / Email</h4>
-                            <p>info@alsafwa-dental.com</p>
-                        </div>
+                        <h4>الهاتف / Phone</h4>
+                        <p>+966 XX XXX XXXX</p>
                     </div>
                     <div class="contact-item">
-                        <div class="contact-icon">📍</div>
-                        <div class="contact-details">
-                            <h4>العنوان / Address</h4>
-                            <p>123 طريق الملك عبد العزيز، الرياض، المملكة العربية السعودية</p>
-                            <p>123 King Abdul Aziz Road, Riyadh, Saudi Arabia</p>
-                        </div>
+                        <h4>البريد الإلكتروني / Email</h4>
+                        <p>info@alsafwa-dental.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>ساعات العمل / Operating Hours</h4>
+                        <p>الأحد - الخميس: 9:00 ص - 9:00 م</p>
+                        <p>الجمعة: 4:00 م - 9:00 م</p>
+                        <p>Sun-Thu: 9:00 AM - 9:00 PM</p>
+                        <p>Fri: 4:00 PM - 9:00 PM</p>
                     </div>
                 </div>
                 <div class="contact-image">
-                    <img src="https://pplx-res.cloudinary.com/image/upload/v1755007201/pplx_project_search_images/9b68c9365ca82b80995999f4f6fcc1c66375bb87.png" alt="Modern Dental Clinic">
+                    <img src="https://pplx-res.cloudinary.com/image/upload/v1755271004/pplx_project_search_images/3613645733c0e8c69f06f518c397cffdaf146463.png" alt="Dental clinic reception">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Enhanced Success Modal -->
-    <div id="successModal" class="modal hidden">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>تم الحجز بنجاح!</h3>
-                <h4>Booking Successful!</h4>
-                <span class="modal-close">&times;</span>
-            </div>
-            <div class="modal-body">
-                <div class="success-icon">✅</div>
-                <p id="bookingConfirmation"></p>
-                <div class="booking-details-modal">
-                    <div class="detail-item">
-                        <strong>رقم الحجز / Booking ID:</strong>
-                        <span id="bookingId"></span>
-                    </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>الصفوة</h3>
+                    <p>Al-Safwa Dental Clinic</p>
+                </div>
+                <div class="footer-text">
+                    <p>&copy; 2025 عيادة الصفوة لطب الأسنان. جميع الحقوق محفوظة.</p>
+                    <p>&copy; 2025 Al-Safwa Dental Clinic. All rights reserved.</p>
                 </div>
             </div>
         </div>
-    </div>
-
-    <!-- Enhanced Admin Panel -->
-    <div id="adminPanel" class="admin-panel hidden">
-        <div class="admin-header">
-            <h2>لوحة الإدارة / Admin Panel</h2>
-            <button class="btn btn--secondary" onclick="closeAdmin()">إغلاق / Close</button>
-        </div>
-        <div class="admin-content">
-            <div class="admin-stats">
-                <div class="stat-card">
-                    <h3 id="totalBookings">0</h3>
-                    <p>إجمالي الحجوزات / Total Bookings</p>
-                </div>
-                <div class="stat-card">
-                    <h3 id="todayBookings">0</h3>
-                    <p>حجوزات اليوم / Today's Bookings</p>
-                </div>
-                <div class="stat-card">
-                    <h3 id="pageViews">0</h3>
-                    <p>زيارات الموقع / Page Views</p>
-                </div>
-            </div>
-            <div class="admin-bookings">
-                <h3>الحجوزات / Bookings</h3>
-                <div class="bookings-table">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>الاسم / Name</th>
-                                <th>الهاتف / Phone</th>
-                                <th>الخدمة / Service</th>
-                                <th>التاريخ / Date</th>
-                                <th>الحالة / Status</th>
-                                <th>الإجراءات / Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody id="bookingsTableBody">
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Enhanced Admin Login Modal -->
-    <div id="adminLoginModal" class="modal hidden">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>دخول الإدارة / Admin Login</h3>
-                <span class="modal-close" onclick="closeAdminLogin()">&times;</span>
-            </div>
-            <div class="modal-body">
-                <form id="adminLoginForm">
-                    <div class="form-group">
-                        <label class="form-label">اسم المستخدم / Username</label>
-                        <input type="text" id="adminUsername" class="form-control" value="admin">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">كلمة المرور / Password</label>
-                        <input type="password" id="adminPassword" class="form-control" value="safwa2024">
-                    </div>
-                    <button type="submit" class="btn btn--primary">دخول / Login</button>
-                </form>
-                <div style="margin-top: 1rem; padding: 1rem; background: var(--light-blue); border-radius: var(--border-radius); font-size: 0.9rem;">
-                    <h4 style="color: var(--primary-blue); margin-bottom: 0.5rem;">كيفية استخدام لوحة الإدارة / How to Use Admin Panel</h4>
-                    <ol style="margin: 0; padding-right: 1rem;">
-                        <li>اضغط Ctrl+Alt+A أو أضف ?admin=true للرابط / Press Ctrl+Alt+A or add ?admin=true to URL</li>
-                        <li>ادخل: admin / safwa2024</li>
-                        <li>شاهد إحصائيات الموقع والحجوزات / View site statistics and bookings</li>
-                        <li>يمكنك تأكيد، إكمال، أو حذف الحجوزات / You can confirm, complete, or delete bookings</li>
-                        <li>تتبع زيارات الموقع والحجوزات اليومية / Track page views and daily bookings</li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-    </div>
+    </footer>
 
     <script src="app.js"></script>
 </body>
