@@ -7,26 +7,31 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="ar">AR</button>
+        <button class="lang-btn" data-lang="ja">JA</button>
+    </div>
+
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <div class="logo-container">
-                    <img src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/6aa43135-9025-4ec3-9ca4-a00a4f46931a.png" alt="MIRAI Logo" class="hero-logo">
-                </div>
+                <img src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/6aa43135-9025-4ec3-9ca4-a00a4f46931a.png" alt="MIRAI Logo" class="hero-logo">
                 <h1 class="hero-title">MIRAI</h1>
-                <p class="hero-tagline">Premium Used & New Car Dealership</p>
+                <p class="hero-tagline" data-translate="tagline">Premium Used & New Car Dealership</p>
                 
                 <div class="contact-info">
                     <div class="contact-item">
-                        <strong>Email:</strong> <a href="mailto:miraiboeki@gmail.com">miraiboeki@gmail.com</a>
+                        <strong data-translate="email">Email:</strong> <a href="mailto:miraiboeki@gmail.com">miraiboeki@gmail.com</a>
                     </div>
                     <div class="contact-phones">
                         <div class="phone-item">
-                            <strong>Layth Jawad Altufaili:</strong> <a href="tel:+817038123707">+817038123707</a>
+                            <strong>Layth Jawad Altufaili (ليث جواد الطفيلي):</strong> <a href="tel:+817038123707">+817038123707</a>
                         </div>
                         <div class="phone-item">
-                            <strong>Rafid Jawad Altufaili:</strong> <a href="tel:+818048083366">+818048083366</a>
+                            <strong>Rafid Jawad Altufaili (رافد جواد الطفيلي):</strong> <a href="tel:+818048083366">+818048083366</a>
                         </div>
                     </div>
                 </div>
@@ -37,43 +42,34 @@
     <!-- Car Brands Section -->
     <section class="brands-section">
         <div class="container">
-            <h2 class="section-title brands-title">Our Trusted Brands</h2>
+            <h2 class="section-title white-title" data-translate="brands-title">Our Trusted Brands</h2>
             <div class="brands-grid">
                 <div class="brand-item">
-                    <img src="https://logos-world.net/wp-content/uploads/2020/05/Mercedes-Benz-Logo.png" alt="Mercedes-Benz" class="brand-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                    <div class="brand-fallback">Mercedes-Benz</div>
+                    <img src="https://logos-world.net/wp-content/uploads/2020/05/Mercedes-Benz-Logo.png" alt="Mercedes-Benz" class="brand-logo" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=&quot;text-align:center;color:#666;&quot;>Mercedes-Benz</div>';">
                 </div>
                 <div class="brand-item">
-                    <img src="https://tse1.mm.bing.net/th/id/OIP.XbOJhzTZXYdpsGK1SLhdigHaHZ?rs=1&pid=ImgDetMain&o=7&rm=3" alt="BMW" class="brand-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                    <div class="brand-fallback">BMW</div>
+                    <img src="https://tse1.mm.bing.net/th/id/OIP.XbOJhzTZXYdpsGK1SLhdigHaHZ?rs=1&pid=ImgDetMain&o=7&rm=3" alt="BMW" class="brand-logo" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=&quot;text-align:center;color:#666;&quot;>BMW</div>';">
                 </div>
                 <div class="brand-item">
-                    <img src="https://logos-world.net/wp-content/uploads/2020/05/Mazda-Logo.png" alt="Mazda" class="brand-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                    <div class="brand-fallback">Mazda</div>
+                    <img src="https://logos-world.net/wp-content/uploads/2020/05/Mazda-Logo.png" alt="Mazda" class="brand-logo" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=&quot;text-align:center;color:#666;&quot;>Mazda</div>';">
                 </div>
                 <div class="brand-item">
-                    <img src="https://logos-world.net/wp-content/uploads/2021/03/Honda-Emblem.png" alt="Honda" class="brand-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                    <div class="brand-fallback">Honda</div>
+                    <img src="https://logos-world.net/wp-content/uploads/2021/03/Honda-Emblem.png" alt="Honda" class="brand-logo" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=&quot;text-align:center;color:#666;&quot;>Honda</div>';">
                 </div>
                 <div class="brand-item">
-                    <img src="https://toppng.com/uploads/preview/mitsubishi-logo-11530961040zbn1z0puwo.png" alt="Mitsubishi" class="brand-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                    <div class="brand-fallback">Mitsubishi</div>
+                    <img src="https://toppng.com/uploads/preview/mitsubishi-logo-11530961040zbn1z0puwo.png" alt="Mitsubishi" class="brand-logo" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=&quot;text-align:center;color:#666;&quot;>Mitsubishi</div>';">
                 </div>
                 <div class="brand-item">
-                    <img src="https://tse2.mm.bing.net/th/id/OIP.morzoyLg5XwODTtaxza1LQHaEY?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Hyundai" class="brand-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                    <div class="brand-fallback">Hyundai</div>
+                    <img src="https://th.bing.com/th/id/R.35647c0cec927537fa43ed1836a446c2?rik=7Lzu71WwPczowA&riu=http%3a%2f%2fpluspng.com%2fimg-png%2fhyundai-logo-png-hyundai-car-logo-png-brand-image-1749.png&ehk=UI8O%2bS7ci5lpalKI9Rf1u%2bMYvCgw%2bVwAeupMAcxmk2g%3d&risl=&pid=ImgRaw&r=0" alt="Hyundai" class="brand-logo" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=&quot;text-align:center;color:#666;&quot;>Hyundai</div>';">
                 </div>
                 <div class="brand-item">
-                    <img src="https://tse3.mm.bing.net/th/id/OIP.8ve11m9d8nMrpaYWXgul5QHaFD?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Toyota" class="brand-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                    <div class="brand-fallback">Toyota</div>
+                    <img src="https://tse3.mm.bing.net/th/id/OIP.8ve11m9d8nMrpaYWXgul5QHaFD?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Toyota" class="brand-logo" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=&quot;text-align:center;color:#666;&quot;>Toyota</div>';">
                 </div>
                 <div class="brand-item">
-                    <img src="https://logos-world.net/wp-content/uploads/2020/04/Nissan-Logo-2001-present.png" alt="Nissan" class="brand-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                    <div class="brand-fallback">Nissan</div>
+                    <img src="https://logos-world.net/wp-content/uploads/2020/04/Nissan-Logo-2001-present.png" alt="Nissan" class="brand-logo" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=&quot;text-align:center;color:#666;&quot;>Nissan</div>';">
                 </div>
                 <div class="brand-item">
-                    <img src="https://tse3.mm.bing.net/th/id/OIP.v3QEEwzyLJwAQYcnEkHi5QHaCV?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Subaru" class="brand-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                    <div class="brand-fallback">Subaru</div>
+                    <img src="https://tse3.mm.bing.net/th/id/OIP.v3QEEwzyLJwAQYcnEkHi5QHaCV?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Subaru" class="brand-logo" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=&quot;text-align:center;color:#666;&quot;>Subaru</div>';">
                 </div>
             </div>
         </div>
@@ -82,22 +78,21 @@
     <!-- About Section -->
     <section class="about-section">
         <div class="container">
-            <h2 class="section-title">About MIRAI</h2>
+            <h2 class="section-title white-title" data-translate="about-title">About Us</h2>
             <div class="about-content">
-                <p>At MIRAI, we specialize in providing premium quality used and new vehicles from trusted global manufacturers. Our commitment to excellence and customer satisfaction has made us a leading name in the automotive industry.</p>
-                <p>We pride ourselves on offering transparent pricing, thorough vehicle inspections, and exceptional customer service to ensure you find the perfect vehicle for your needs.</p>
+                <p data-translate="about-text">MIRAI is committed to providing high-quality new and used vehicles with exceptional customer service.</p>
                 
                 <div class="contact-info about-contact">
-                    <h3>Contact Information</h3>
+                    <h3 data-translate="contact-info-title">Contact Information</h3>
                     <div class="contact-item">
-                        <strong>Email:</strong> <a href="mailto:miraiboeki@gmail.com">miraiboeki@gmail.com</a>
+                        <strong data-translate="email">Email:</strong> <a href="mailto:miraiboeki@gmail.com">miraiboeki@gmail.com</a>
                     </div>
                     <div class="contact-phones">
                         <div class="phone-item">
-                            <strong>Layth Jawad Altufaili:</strong> <a href="tel:+817038123707">+817038123707</a>
+                            <strong>Layth Jawad Altufaili (ليث جواد الطفيلي):</strong> <a href="tel:+817038123707">+817038123707</a>
                         </div>
                         <div class="phone-item">
-                            <strong>Rafid Jawad Altufaili:</strong> <a href="tel:+818048083366">+818048083366</a>
+                            <strong>Rafid Jawad Altufaili (رافد جواد الطفيلي):</strong> <a href="tel:+818048083366">+818048083366</a>
                         </div>
                     </div>
                 </div>
@@ -108,7 +103,7 @@
     <!-- Leadership Team Section -->
     <section class="leadership-section">
         <div class="container">
-            <h2 class="section-title leadership-title">Our Leadership Team</h2>
+            <h2 class="section-title white-title" data-translate="leadership-title">Our Leadership Team</h2>
             <div class="leadership-grid">
                 <div class="leader-card">
                     <div class="leader-info">

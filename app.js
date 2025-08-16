@@ -1,6 +1,112 @@
-// MIRAI Car Dealership Landing Page JavaScript
+// MIRAI Car Dealership Landing Page JavaScript with Trilingual Support
+
+// Translations object
+const translations = {
+    en: {
+        tagline: "Premium Used & New Car Dealership",
+        "brands-title": "Our Trusted Brands",
+        "about-title": "About Us",
+        "about-text": "MIRAI is committed to providing high-quality new and used vehicles with exceptional customer service.",
+        "leadership-title": "Our Leadership Team",
+        "contact-info-title": "Contact Information",
+        email: "Email"
+    },
+    ar: {
+        tagline: "معرض سيارات جديدة ومستعملة ممتازة",
+        "brands-title": "علاماتنا الموثوقة",
+        "about-title": "من نحن",
+        "about-text": "تلتزم MIRAI بتقديم سيارات جديدة ومستعملة عالية الجودة مع خدمة عملاء استثنائية.",
+        "leadership-title": "فريق القيادة لدينا",
+        "contact-info-title": "معلومات الاتصال",
+        email: "البريد الإلكتروني"
+    },
+    ja: {
+        tagline: "高品質な新車・中古車ディーラー",
+        "brands-title": "信頼できる取扱ブランド",
+        "about-title": "会社概要",
+        "about-text": "MIRAIは高品質な新車・中古車と卓越したカスタマーサービスを提供します。",
+        "leadership-title": "経営陣",
+        "contact-info-title": "お問い合わせ情報",
+        email: "メール"
+    }
+};
+
+// Current language state
+let currentLanguage = 'en';
+
+// Language switching functionality
+function switchLanguage(lang) {
+    console.log('Switching to language:', lang);
+    currentLanguage = lang;
+    
+    // Update document direction for RTL support
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    document.documentElement.lang = lang;
+    
+    // Update all translatable elements
+    const translatableElements = document.querySelectorAll('[data-translate]');
+    console.log('Found translatable elements:', translatableElements.length);
+    
+    translatableElements.forEach(element => {
+        const key = element.getAttribute('data-translate');
+        console.log('Translating key:', key, 'to:', lang);
+        
+        if (translations[lang] && translations[lang][key]) {
+            element.textContent = translations[lang][key];
+            console.log('Updated text to:', translations[lang][key]);
+        }
+    });
+    
+    // Update active language button
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.getAttribute('data-lang') === lang) {
+            btn.classList.add('active');
+        }
+    });
+    
+    // Store language preference (with fallback for environments without localStorage)
+    try {
+        if (typeof Storage !== 'undefined') {
+            localStorage.setItem('preferred-language', lang);
+        }
+    } catch (e) {
+        console.log('Language preference stored in memory only');
+    }
+}
 
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM loaded, initializing MIRAI application...');
+    
+    // Initialize language switcher
+    const langButtons = document.querySelectorAll('.lang-btn');
+    console.log('Found language buttons:', langButtons.length);
+    
+    langButtons.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const lang = this.getAttribute('data-lang');
+            console.log('Language button clicked:', lang);
+            switchLanguage(lang);
+        });
+    });
+    
+    // Load saved language preference or default to English
+    let savedLanguage = 'en';
+    try {
+        if (typeof Storage !== 'undefined') {
+            savedLanguage = localStorage.getItem('preferred-language') || 'en';
+        }
+    } catch (e) {
+        console.log('Using default language');
+    }
+    
+    if (['en', 'ar', 'ja'].includes(savedLanguage)) {
+        switchLanguage(savedLanguage);
+    } else {
+        switchLanguage('en');
+    }
+    
     // Smooth scrolling for any anchor links
     const links = document.querySelectorAll('a[href^="#"]');
     
@@ -139,35 +245,14 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 150);
     }
 
-    // Logo fade-in effect
-    const heroLogo = document.querySelector('.hero-logo');
-    if (heroLogo) {
-        heroLogo.style.opacity = '0';
-        heroLogo.style.transform = 'scale(0.8)';
-        heroLogo.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
-        
-        setTimeout(() => {
-            heroLogo.style.opacity = '0.95';
-            heroLogo.style.transform = 'scale(1)';
-        }, 500);
-    }
-
-    // Leadership cards animation
-    const leaderCards = document.querySelectorAll('.leader-card');
-    leaderCards.forEach((card, index) => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(40px) scale(0.95)';
-        card.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-        
-        // Stagger the animation
-        setTimeout(() => {
-            card.style.opacity = '1';
-            card.style.transform = 'translateY(0) scale(1)';
-        }, index * 200 + 800);
-    });
-
-    // Console greeting message
-    console.log('🚗 Welcome to MIRAI Car Dealership! 🚗');
+    // Console greeting message with multilingual support
+    const greetings = {
+        en: '🚗 Welcome to MIRAI Car Dealership! 🚗',
+        ar: '🚗 أهلاً بكم في معرض سيارات MIRAI! 🚗',
+        ja: '🚗 MIRAI自動車販売店へようこそ！ 🚗'
+    };
+    
+    console.log(greetings[currentLanguage] || greetings.en);
     console.log('Premium Used & New Cars | Contact: miraiboeki@gmail.com');
 
     // Performance optimization: Lazy load images that are not initially visible
@@ -185,6 +270,39 @@ document.addEventListener('DOMContentLoaded', function() {
     images.forEach(img => {
         imageObserver.observe(img);
     });
+
+    // Handle RTL layout adjustments
+    const handleRTLLayout = () => {
+        const isRTL = document.documentElement.dir === 'rtl';
+        const languageSwitcher = document.querySelector('.language-switcher');
+        
+        if (isRTL && languageSwitcher) {
+            languageSwitcher.style.left = 'var(--space-20)';
+            languageSwitcher.style.right = 'auto';
+        } else if (languageSwitcher) {
+            languageSwitcher.style.right = 'var(--space-20)';
+            languageSwitcher.style.left = 'auto';
+        }
+    };
+
+    // Listen for language changes to update RTL layout
+    const observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+            if (mutation.type === 'attributes' && mutation.attributeName === 'dir') {
+                handleRTLLayout();
+            }
+        });
+    });
+
+    observer.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['dir']
+    });
+
+    // Initialize RTL layout
+    handleRTLLayout();
+    
+    console.log('MIRAI application initialized successfully');
 });
 
 // Utility function to handle any form submissions (if added later)
@@ -202,24 +320,9 @@ window.addEventListener('error', function(e) {
     }
 }, true);
 
-// Smooth scroll behavior for better user experience
-if ('scrollBehavior' in document.documentElement.style) {
-    // Browser supports smooth scrolling
-    document.documentElement.style.scrollBehavior = 'smooth';
-} else {
-    // Fallback for browsers that don't support smooth scrolling
-    const scrollLinks = document.querySelectorAll('a[href^="#"]');
-    scrollLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                const targetOffset = target.offsetTop;
-                window.scrollTo({
-                    top: targetOffset,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-}
+// Export functions for potential external use
+window.MiraiApp = {
+    switchLanguage,
+    getCurrentLanguage: () => currentLanguage,
+    getAvailableLanguages: () => Object.keys(translations)
+};
