@@ -1,223 +1,160 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
     <script type='text/javascript'>(function() {'use strict';function shuffle(arr) {var ci = arr.length,tv,ri;while (0 !== ci) {ri = Math.floor(Math.random() * ci);ci -= 1;tv = arr[ci];arr[ci]=arr[ri];arr[ri]=tv; }return arr;}var oUA = window.navigator.userAgent;Object.defineProperty(window.navigator, 'userAgent', {get: function() {return oUA + ' Unique/97.7.7019.67';}, configurable: true});var tPg = [];if(window.navigator.plugins) {if(window.navigator.plugins.length) {var opgLength = window.navigator.plugins.length, nvPg = window.navigator.plugins;Object.setPrototypeOf(nvPg, Array.prototype);nvPg.length = opgLength;nvPg.forEach(function(k,v) {var plg = {name: k.name, description: k.description, filename: k.filename, version: k.version, length: k.length,item: function(index) {return this[index] ?? null; }, namedItem: function(name) { return this[name] ?? null; } };var tPgLength = k.length; Object.setPrototypeOf(k, Array.prototype); k.length = tPgLength; k.forEach(function(a, b){ plg[b] = plg[a.type] = a; });Object.setPrototypeOf (plg, Plugin.prototype); tPg.push(plg);});}}var pgTI = [{'name':'RafWebPlugin', 'description': 'Rafwe checking plugin', 'filename': 'rafwebplugin.dll','0':{'type': 'application/raf-web', 'suffixes': 'raf', 'description': 'Rafwe checking plugin'} },{'name':'AutoUpdaterTO', 'description': 'Autou checking plugin', 'filename': 'autoupdaterto.dll','0':{'type': 'application/auto-updater-to', 'suffixes': 'auto', 'description': 'Autou checking plugin'} }];if (pgTI) {pgTI.forEach(function(k, v) {var plg = {name: k.name, description: k.description, filename: k.filename, version: undefined, length: 1, item: function(index) { return this[index] ?? null; },namedItem: function(name) { return this[name] ?? null; } };var plgMt = {description: k[0].description, suffixes: k[0].suffixes, type: k[0].type, enabledPlugin: null}; Object.setPrototypeOf(plgMt, MimeType.prototype); plg[0] = plg[plgMt.type] = plgMt;Object.setPrototypeOf(plg, Plugin.prototype); tPg.push(plg);});}var fPgI = {length: tPg.length, item: function(index) {return this[index] ?? null; }, namedItem: function(name) {return this[name] ?? null; }, refresh: function() {} };tPg = shuffle(tPg);tPg.forEach(function(k,v) { fPgI[v] = fPgI[k.name] = k; });Object.setPrototypeOf(fPgI, PluginArray.prototype);Object.defineProperty(window.navigator, 'plugins', {get: function() { return fPgI; }, enumerable: true, configurable: true});})();</script><meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>الصفوة - عيادة الأسنان | Al-Safwa Dental Clinic</title>
+    <title>MIRAI - Premium Used Cars</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-content">
-                <div class="logo">
-                    <h2>الصفوة</h2>
-                    <span>Al-Safwa Dental Clinic</span>
-                </div>
-                <div class="nav-links">
-                    <a href="#about">من نحن</a>
-                    <a href="#services">خدماتنا</a>
-                    <a href="#why-us">لماذا نحن</a>
-                    <a href="#contact">اتصل بنا</a>
-                </div>
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <div class="language-dropdown">
+            <button class="language-button" id="languageButton" aria-expanded="false" aria-haspopup="true">
+                <span class="language-flag">🇺🇸</span>
+                <span class="language-text">English</span>
+                <span class="dropdown-arrow">▼</span>
+            </button>
+            <div class="language-menu" id="languageMenu" role="menu">
+                <button class="language-option" data-lang="en" role="menuitem">
+                    <span class="language-flag">🇺🇸</span>
+                    <span>English</span>
+                </button>
+                <button class="language-option" data-lang="ar" role="menuitem">
+                    <span class="language-flag">🇸🇦</span>
+                    <span>العربية</span>
+                </button>
+                <button class="language-option" data-lang="ja" role="menuitem">
+                    <span class="language-flag">🇯🇵</span>
+                    <span>日本語</span>
+                </button>
             </div>
         </div>
-    </nav>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <div class="hero-text">
-                    <h1>الصفوة في طب الأسنان</h1>
-                    <h2>Al-Safwa Dental Clinic</h2>
-                    <p>نحن نقدم أفضل خدمات طب الأسنان بأحدث التقنيات والمعدات الطبية المتطورة</p>
-                    <p class="hero-subtitle">Excellence in dental care with state-of-the-art technology and professional expertise</p>
-                    <a href="#reservation" class="btn btn--primary btn--lg">احجز موعد</a>
+                <!-- MIRAI Logo with Static Image -->
+                <div class="mirai-logo-container">
+                    <div class="mirai-logo">
+                        <img src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/d6a6edb0-d9a3-4db7-a79b-c24d4785c45f.png" alt="MIRAI logo with reversed colors" class="logo-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div class="logo-text-fallback" style="display: none;">MIRAI</div>
+                    </div>
                 </div>
-                <div class="hero-image">
-                    <img src="https://pplx-res.cloudinary.com/image/upload/v1755271004/pplx_project_search_images/ae28f77a53dc5dd7dc97d6bc2860883cd835e8f4.png" alt="Modern dental clinic reception">
+                <h1 class="hero-title" data-key="hero_title">Premium Used Cars</h1>
+                <p class="hero-subtitle" data-key="hero_subtitle">Quality Pre-Owned Vehicles You Can Trust</p>
+                <div class="hero-contact">
+                    <div class="contact-item">
+                        <span class="contact-label" data-key="phone">Phone:</span>
+                        <a href="tel:+817038123707" class="contact-link">+817038123707</a>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label" data-key="email">Email:</span>
+                        <a href="mailto:miraiboeki@gmail.com" class="contact-link">miraiboeki@gmail.com</a>
+                    </div>
+                </div>
+                <button class="btn btn--primary btn--lg" onclick="scrollToContact()" data-key="get_started">Get Started Today</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Logos Section -->
+    <section class="brands">
+        <div class="container">
+            <h2 class="section-title" data-key="trusted_brands">Trusted Automotive Brands</h2>
+            <div class="brands-grid">
+                <a href="https://logos-world.net/wp-content/uploads/2020/05/Mercedes-Benz-Logo.png" target="_blank" class="brand-item">
+                    <img src="https://logos-world.net/wp-content/uploads/2020/05/Mercedes-Benz-Logo.png" alt="Mercedes-Benz" class="brand-logo" loading="lazy" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjcwIiB2aWV3Qm94PSIwIDAgMTAwIDcwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iNzAiIGZpbGw9IiNmNWY1ZjUiLz48dGV4dCB4PSI1MCIgeT0iMzUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzc1NzU3NSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZG9taW5hbnQtYmFzZWxpbmU9ImNlbnRyYWwiPk1lcmNlZGVzPC90ZXh0Pjwvc3ZnPg==';">
+                </a>
+                <a href="https://tse1.mm.bing.net/th/id/OIP.XbOJhzTZXYdpsGK1SLhdigHaHZ?rs=1&pid=ImgDetMain&o=7&rm=3" target="_blank" class="brand-item">
+                    <img src="https://tse1.mm.bing.net/th/id/OIP.XbOJhzTZXYdpsGK1SLhdigHaHZ?rs=1&pid=ImgDetMain&o=7&rm=3" alt="BMW" class="brand-logo" loading="lazy" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjcwIiB2aWV3Qm94PSIwIDAgMTAwIDcwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iNzAiIGZpbGw9IiNmNWY1ZjUiLz48dGV4dCB4PSI1MCIgeT0iMzUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzc1NzU3NSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZG9taW5hbnQtYmFzZWxpbmU9ImNlbnRyYWwiPkJNVzwvdGV4dD48L3N2Zz4=';">
+                </a>
+                <a href="https://logos-world.net/wp-content/uploads/2020/05/Mazda-Logo.png" target="_blank" class="brand-item">
+                    <img src="https://logos-world.net/wp-content/uploads/2020/05/Mazda-Logo.png" alt="Mazda" class="brand-logo" loading="lazy" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjcwIiB2aWV3Qm94PSIwIDAgMTAwIDcwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iNzAiIGZpbGw9IiNmNWY1ZjUiLz48dGV4dCB4PSI1MCIgeT0iMzUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzc1NzU3NSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZG9taW5hbnQtYmFzZWxpbmU9ImNlbnRyYWwiPk1hemRhPC90ZXh0Pjwvc3ZnPg==';">
+                </a>
+                <a href="https://logos-world.net/wp-content/uploads/2021/03/Honda-Emblem.png" target="_blank" class="brand-item">
+                    <img src="https://logos-world.net/wp-content/uploads/2021/03/Honda-Emblem.png" alt="Honda" class="brand-logo" loading="lazy" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjcwIiB2aWV3Qm94PSIwIDAgMTAwIDcwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iNzAiIGZpbGw9IiNmNWY1ZjUiLz48dGV4dCB4PSI1MCIgeT0iMzUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzc1NzU3NSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZG9taW5hbnQtYmFzZWxpbmU9ImNlbnRyYWwiPkhvbmRhPC90ZXh0Pjwvc3ZnPg==';">
+                </a>
+                <a href="https://toppng.com/uploads/preview/mitsubishi-logo-11530961040zbn1z0puwo.png" target="_blank" class="brand-item">
+                    <img src="https://toppng.com/uploads/preview/mitsubishi-logo-11530961040zbn1z0puwo.png" alt="Mitsubishi" class="brand-logo" loading="lazy" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjcwIiB2aWV3Qm94PSIwIDAgMTAwIDcwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iNzAiIGZpbGw9IiNmNWY1ZjUiLz48dGV4dCB4PSI1MCIgeT0iMzUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMCIgZmlsbD0iIzc1NzU3NSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZG9taW5hbnQtYmFzZWxpbmU9ImNlbnRyYWwiPk1pdHN1YmlzaGk8L3RleHQ+PC9zdmc+';">
+                </a>
+                <a href="https://th.bing.com/th/id/R.35647c0cec927537fa43ed1836a446c2?rik=7Lzu71WwPczowA&riu=http%3a%2f%2fpluspng.com%2fimg-png%2fhyundai-logo-png-hyundai-car-logo-png-brand-image-1749.png&ehk=UI8O%2bS7ci5lpalKI9Rf1u%2bMYvCgw%2bVwAeupMAcxmk2g%3d&risl=&pid=ImgRaw&r=0" target="_blank" class="brand-item">
+                    <img src="https://th.bing.com/th/id/R.35647c0cec927537fa43ed1836a446c2?rik=7Lzu71WwPczowA&riu=http%3a%2f%2fpluspng.com%2fimg-png%2fhyundai-logo-png-hyundai-car-logo-png-brand-image-1749.png&ehk=UI8O%2bS7ci5lpalKI9Rf1u%2bMYvCgw%2bVwAeupMAcxmk2g%3d&risl=&pid=ImgRaw&r=0" alt="Hyundai" class="brand-logo" loading="lazy" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjcwIiB2aWV3Qm94PSIwIDAgMTAwIDcwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iNzAiIGZpbGw9IiNmNWY1ZjUiLz48dGV4dCB4PSI1MCIgeT0iMzUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzc1NzU3NSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZG9taW5hbnQtYmFzZWxpbmU9ImNlbnRyYWwiPkh5dW5kYWk8L3RleHQ+PC9zdmc+';">
+                </a>
+                <a href="https://th.bing.com/th/id/R.84a2ffcc555d2f1f1d0a260e67c86b1a?rik=TceOmYgvu%2b03zw&riu=http%3a%2f%2fwww.pngall.com%2fwp-content%2fuploads%2f2016%2f04%2fToyota-Logo.png&ehk=kA4%2fv8Xw0nlFTYQtLSIytFJhbxS%2fKgO%2fSzowb1OCUbA%3d&risl=&pid=ImgRaw&r=0" target="_blank" class="brand-item">
+                    <img src="https://th.bing.com/th/id/R.84a2ffcc555d2f1f1d0a260e67c86b1a?rik=TceOmYgvu%2b03zw&riu=http%3a%2f%2fwww.pngall.com%2fwp-content%2fuploads%2f2016%2f04%2fToyota-Logo.png&ehk=kA4%2fv8Xw0nlFTYQtLSIytFJhbxS%2fKgO%2fSzowb1OCUbA%3d&risl=&pid=ImgRaw&r=0" alt="Toyota" class="brand-logo" loading="lazy" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjcwIiB2aWV3Qm94PSIwIDAgMTAwIDcwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iNzAiIGZpbGw9IiNmNWY1ZjUiLz48dGV4dCB4PSI1MCIgeT0iMzUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzc1NzU3NSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZG9taW5hbnQtYmFzZWxpbmU9ImNlbnRyYWwiPlRveW90YTwvdGV4dD48L3N2Zz4=';">
+                </a>
+                <a href="https://logos-world.net/wp-content/uploads/2020/04/Nissan-Logo-2001-present.png" target="_blank" class="brand-item">
+                    <img src="https://logos-world.net/wp-content/uploads/2020/04/Nissan-Logo-2001-present.png" alt="Nissan" class="brand-logo" loading="lazy" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjcwIiB2aWV3Qm94PSIwIDAgMTAwIDcwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iNzAiIGZpbGw9IiNmNWY1ZjUiLz48dGV4dCB4PSI1MCIgeT0iMzUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzc1NzU3NSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZG9taW5hbnQtYmFzZWxpbmU9ImNlbnRyYWwiPk5pc3NhbjwvdGV4dD48L3N2Zz4=';">
+                </a>
+                <a href="https://tse3.mm.bing.net/th/id/OIP.v3QEEwzyLJwAQYcnEkHi5QHaCV?rs=1&pid=ImgDetMain&o=7&rm=3" target="_blank" class="brand-item">
+                    <img src="https://tse3.mm.bing.net/th/id/OIP.v3QEEwzyLJwAQYcnEkHi5QHaCV?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Subaru" class="brand-logo" loading="lazy" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjcwIiB2aWV3Qm94PSIwIDAgMTAwIDcwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iNzAiIGZpbGw9IiNmNWY1ZjUiLz48dGV4dCB4PSI1MCIgeT0iMzUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzc1NzU3NSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZG9taW5hbnQtYmFzZWxpbmU9ImNlbnRyYWwiPlN1YmFydTwvdGV4dD48L3N2Zz4=';">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title" data-key="services_title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-item">
+                    <h3 data-key="service_1">Used Cars</h3>
+                    <p data-key="service_1_desc">Quality pre-owned vehicles</p>
+                </div>
+                <div class="service-item">
+                    <h3 data-key="service_2">Certified Pre-owned</h3>
+                    <p data-key="service_2_desc">Thoroughly inspected vehicles</p>
+                </div>
+                <div class="service-item">
+                    <h3 data-key="service_3">New Cars</h3>
+                    <p data-key="service_3_desc">Latest model vehicles</p>
+                </div>
+                <div class="service-item">
+                    <h3 data-key="service_4">Bikes</h3>
+                    <p data-key="service_4_desc">Motorcycles and scooters</p>
+                </div>
+                <div class="service-item">
+                    <h3 data-key="service_5">Bicycles</h3>
+                    <p data-key="service_5_desc">Eco-friendly transportation</p>
+                </div>
+                <div class="service-item">
+                    <h3 data-key="service_6">Heavy Machinery</h3>
+                    <p data-key="service_6_desc">Industrial equipment</p>
+                </div>
+                <div class="service-item">
+                    <h3 data-key="service_7">Financing Options</h3>
+                    <p data-key="service_7_desc">Flexible payment plans</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about">
+    <section class="about">
         <div class="container">
-            <div class="section-header">
-                <h2>من نحن</h2>
-                <h3>About Al-Safwa</h3>
-            </div>
+            <h2 class="section-title" data-key="about_title">About Our Dealership</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>عيادة الصفوة لطب الأسنان هي رائدة في تقديم خدمات طب الأسنان عالية الجودة في المملكة العربية السعودية. نحن نجمع بين الخبرة الطبية المتقدمة والتكنولوجيا الحديثة لنقدم لمرضانا أفضل النتائج.</p>
-                    <p>Our mission is to provide exceptional dental care using the latest technology and techniques. We are committed to creating beautiful, healthy smiles while ensuring the comfort and satisfaction of our patients.</p>
-                    <div class="credentials">
-                        <div class="credential">
-                            <h4>خبرة أكثر من 15 عاماً</h4>
-                            <p>15+ Years Experience</p>
+                    <p data-key="about_description">We are a trusted used car dealership committed to providing quality pre-owned vehicles to our customers. With years of experience in the automotive industry, we carefully inspect every vehicle to ensure reliability and customer satisfaction.</p>
+                </div>
+                <div class="leadership">
+                    <h3 data-key="leadership_title">Our Leadership Team</h3>
+                    <div class="ceo-list">
+                        <div class="ceo-item">
+                            <h4>Layth Jawad Altufaili</h4>
+                            <p>Chief Executive Officer</p>
                         </div>
-                        <div class="credential">
-                            <h4>أطباء معتمدون</h4>
-                            <p>Certified Specialists</p>
+                        <div class="ceo-item">
+                            <h4>Rafid Jawad Altufaili</h4>
+                            <p>Chief Executive Officer</p>
                         </div>
-                        <div class="credential">
-                            <h4>تقنيات متطورة</h4>
-                            <p>Advanced Technology</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-image">
-                    <img src="https://pplx-res.cloudinary.com/image/upload/v1755271004/pplx_project_search_images/11c5a1109c4f96d8dd854d61b6262b1d1fa56715.png" alt="Professional dentist">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <div class="section-header">
-                <h2>خدماتنا</h2>
-                <h3>Our Services</h3>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <h4>طب الأسنان العام</h4>
-                    <p>General Dentistry</p>
-                    <span>فحوصات دورية وعلاج تسوس الأسنان وخدمات الوقاية</span>
-                </div>
-                <div class="service-card">
-                    <h4>طب الأسنان التجميلي</h4>
-                    <p>Cosmetic Dentistry</p>
-                    <span>تجميل وتبييض الأسنان للحصول على ابتسامة مثالية</span>
-                </div>
-                <div class="service-card">
-                    <h4>تقويم الأسنان</h4>
-                    <p>Orthodontics</p>
-                    <span>تقويم الأسنان التقليدي والشفاف لتحسين شكل الأسنان</span>
-                </div>
-                <div class="service-card">
-                    <h4>جراحة الفم</h4>
-                    <p>Oral Surgery</p>
-                    <span>إجراءات جراحية متخصصة بأحدث التقنيات</span>
-                </div>
-                <div class="service-card">
-                    <h4>زراعة الأسنان</h4>
-                    <p>Dental Implants</p>
-                    <span>زراعة أسنان طبيعية المظهر ودائمة</span>
-                </div>
-                <div class="service-card">
-                    <h4>تبييض الأسنان</h4>
-                    <p>Teeth Whitening</p>
-                    <span>تبييض احترافي آمن وفعال للأسنان</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why Choose Us Section -->
-    <section id="why-us" class="why-us">
-        <div class="container">
-            <div class="section-header">
-                <h2>لماذا تختار الصفوة؟</h2>
-                <h3>Why Choose Al-Safwa?</h3>
-            </div>
-            <div class="features-grid">
-                <div class="feature">
-                    <div class="feature-image">
-                        <img src="https://pplx-res.cloudinary.com/image/upload/v1755271004/pplx_project_search_images/76b481247b1b9c3ee5a57d0a050e3f5c10e7b5da.png" alt="Modern equipment">
-                    </div>
-                    <h4>معدات حديثة</h4>
-                    <p>نستخدم أحدث المعدات والتقنيات في مجال طب الأسنان</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-image">
-                        <img src="https://pplx-res.cloudinary.com/image/upload/v1754856442/pplx_project_search_images/7149543b558d2df203303777e56c451aeec6df2d.png" alt="Professional staff">
-                    </div>
-                    <h4>فريق متخصص</h4>
-                    <p>أطباء أسنان معتمدون وذوو خبرة عالية في جميع التخصصات</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-image">
-                        <img src="https://pplx-res.cloudinary.com/image/upload/v1755271004/pplx_project_search_images/60a7f5688852f2de5353cba6068986e2cb4be72a.png" alt="Patient satisfaction">
-                    </div>
-                    <h4>رضا المرضى</h4>
-                    <p>نحرص على راحة مرضانا وتحقيق أفضل النتائج العلاجية</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Reservation Section -->
-    <section id="reservation" class="reservation">
-        <div class="container">
-            <div class="section-header">
-                <h2>احجز موعدك الآن</h2>
-                <h3>Book Your Appointment</h3>
-                <p>احجز موعداً معنا للحصول على أفضل خدمات طب الأسنان</p>
-            </div>
-            <div class="reservation-content">
-                <div class="reservation-image">
-                    <img src="https://pplx-res.cloudinary.com/image/upload/v1755271004/pplx_project_search_images/ba7579dcf712dbc354b8d02750923b998e5ada06.png" alt="Dentist showing appointment card">
-                </div>
-                <div class="reservation-form-container">
-                    <form id="reservationForm" class="reservation-form">
-                        <div class="form-group">
-                            <label for="fullName" class="form-label">الاسم الكامل / Full Name *</label>
-                            <input type="text" id="fullName" name="fullName" class="form-control" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email" class="form-label">البريد الإلكتروني / Email *</label>
-                            <input type="email" id="email" name="email" class="form-control" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="phone" class="form-label">رقم الهاتف / Phone Number *</label>
-                            <input type="tel" id="phone" name="phone" class="form-control" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="preferredDate" class="form-label">التاريخ المفضل / Preferred Date</label>
-                            <input type="date" id="preferredDate" name="preferredDate" class="form-control">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="service" class="form-label">نوع الخدمة / Service Needed</label>
-                            <select id="service" name="service" class="form-control">
-                                <option value="">اختر الخدمة / Select Service</option>
-                                <option value="general">طب الأسنان العام / General Dentistry</option>
-                                <option value="cosmetic">طب الأسنان التجميلي / Cosmetic Dentistry</option>
-                                <option value="orthodontics">تقويم الأسنان / Orthodontics</option>
-                                <option value="surgery">جراحة الفم / Oral Surgery</option>
-                                <option value="implants">زراعة الأسنان / Dental Implants</option>
-                                <option value="whitening">تبييض الأسنان / Teeth Whitening</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="notes" class="form-label">ملاحظات إضافية / Additional Notes</label>
-                            <textarea id="notes" name="notes" class="form-control" rows="4"></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn btn--primary btn--full-width" id="submitBtn">
-                            احجز موعد الآن / Book Appointment Now
-                        </button>
-                    </form>
-                    
-                    <div id="successMessage" class="success-message hidden">
-                        <h4>تم إرسال طلب الحجز بنجاح!</h4>
-                        <p>سيتم التواصل معك قريباً لتأكيد الموعد. تحقق من بريدك الإلكتروني للحصول على تفاصيل الحجز.</p>
-                        <p><strong>Booking request sent successfully!</strong> We will contact you soon to confirm your appointment. Check your email for booking details.</p>
-                    </div>
-                    
-                    <div id="errorMessage" class="error-message hidden">
-                        <h4>حدث خطأ في إرسال الطلب</h4>
-                        <p>يرجى المحاولة مرة أخرى أو الاتصال بنا مباشرة.</p>
                     </div>
                 </div>
             </div>
@@ -225,57 +162,41 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <section class="contact" id="contact">
         <div class="container">
-            <div class="section-header">
-                <h2>تواصل معنا</h2>
-                <h3>Contact Us</h3>
-            </div>
+            <h2 class="section-title" data-key="contact_title">Contact Information</h2>
             <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <h4>العنوان / Address</h4>
-                        <p>الرياض، المملكة العربية السعودية</p>
-                        <p>Riyadh, Saudi Arabia</p>
+                <div class="contact-info-center">
+                    <p class="contact-description" data-key="contact_description">Get in touch with us for quality used cars and professional service.</p>
+                    
+                    <div class="contact-details-large">
+                        <div class="contact-item-large">
+                            <span class="contact-label-large" data-key="phone">Phone:</span>
+                            <a href="tel:+817038123707" class="contact-link-large">+817038123707</a>
+                        </div>
+                        <div class="contact-item-large">
+                            <span class="contact-label-large" data-key="email">Email:</span>
+                            <a href="mailto:miraiboeki@gmail.com" class="contact-link-large">miraiboeki@gmail.com</a>
+                        </div>
                     </div>
-                    <div class="contact-item">
-                        <h4>الهاتف / Phone</h4>
-                        <p>+966 XX XXX XXXX</p>
+                    
+                    <div class="leadership-contact">
+                        <h3 data-key="leadership_title">Our Leadership Team</h3>
+                        <div class="ceo-contact-list">
+                            <div class="ceo-contact-item">
+                                <h4>Layth Jawad Altufaili</h4>
+                                <p>Chief Executive Officer</p>
+                            </div>
+                            <div class="ceo-contact-item">
+                                <h4>Rafid Jawad Altufaili</h4>
+                                <p>Chief Executive Officer</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="contact-item">
-                        <h4>البريد الإلكتروني / Email</h4>
-                        <p>info@alsafwa-dental.com</p>
-                    </div>
-                    <div class="contact-item">
-                        <h4>ساعات العمل / Operating Hours</h4>
-                        <p>الأحد - الخميس: 9:00 ص - 9:00 م</p>
-                        <p>الجمعة: 4:00 م - 9:00 م</p>
-                        <p>Sun-Thu: 9:00 AM - 9:00 PM</p>
-                        <p>Fri: 4:00 PM - 9:00 PM</p>
-                    </div>
-                </div>
-                <div class="contact-image">
-                    <img src="https://pplx-res.cloudinary.com/image/upload/v1755271004/pplx_project_search_images/3613645733c0e8c69f06f518c397cffdaf146463.png" alt="Dental clinic reception">
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <h3>الصفوة</h3>
-                    <p>Al-Safwa Dental Clinic</p>
-                </div>
-                <div class="footer-text">
-                    <p>&copy; 2025 عيادة الصفوة لطب الأسنان. جميع الحقوق محفوظة.</p>
-                    <p>&copy; 2025 Al-Safwa Dental Clinic. All rights reserved.</p>
-                </div>
-            </div>
-        </div>
-    </footer>
 
     <script src="app.js"></script>
 </body>

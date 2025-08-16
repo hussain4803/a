@@ -738,604 +738,710 @@ select.form-control {
 }
 
 /* END PERPLEXITY DESIGN SYSTEM */
-/* Custom dark blue and white theme for Al-Safwa Dental Clinic */
+/* Custom Color Variables for Red-Yellow Theme */
 :root {
-  /* Custom color palette for dental clinic */
-  --dental-dark-blue: #1e3a8a;
-  --dental-medium-blue: #1e40af;
-  --dental-light-blue: #3b82f6;
-  --dental-white: #ffffff;
-  --dental-off-white: #f8fafc;
-  --dental-text-dark: #1e293b;
-  --dental-text-light: #64748b;
-  --dental-accent: #0ea5e9;
-  
-  /* Override design system colors */
-  --color-primary: var(--dental-dark-blue);
-  --color-primary-hover: var(--dental-medium-blue);
-  --color-primary-active: var(--dental-light-blue);
-  --color-background: var(--dental-white);
-  --color-surface: var(--dental-off-white);
-  --color-text: var(--dental-text-dark);
-  --color-text-secondary: var(--dental-text-light);
-  
-  /* Typography for Arabic and English */
-  --font-family-arabic: 'Cairo', 'Tajawal', 'Amiri', sans-serif;
-  --font-family-english: 'Inter', 'Segoe UI', sans-serif;
+  --dealership-red: #D32F2F;
+  --dealership-red-dark: #B71C1C;
+  --dealership-red-light: #EF5350;
+  --dealership-yellow: #FFC107;
+  --dealership-yellow-dark: #FF8F00;
+  --dealership-yellow-light: #FFF59D;
+  --dealership-white: #FFFFFF;
+  --dealership-black: #212121;
+  --dealership-gray: #757575;
+  --dealership-gray-light: #F5F5F5;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* Override design system colors for this specific theme */
+:root {
+  --color-primary: var(--dealership-red);
+  --color-primary-hover: var(--dealership-red-dark);
+  --color-primary-active: var(--dealership-red-dark);
+  --color-secondary: var(--dealership-yellow);
+  --color-secondary-hover: var(--dealership-yellow-dark);
+  --color-text: var(--dealership-black);
+  --color-text-secondary: var(--dealership-gray);
 }
 
-body {
-  font-family: var(--font-family-arabic), var(--font-family-english);
-  line-height: 1.6;
-  color: var(--color-text);
-  background-color: var(--color-background);
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-/* Navigation */
-.navbar {
-  background: var(--dental-white);
-  box-shadow: 0 2px 10px rgba(30, 58, 138, 0.1);
+/* Language Switcher */
+.language-switcher {
   position: fixed;
-  top: 0;
-  width: 100%;
+  top: var(--space-20);
+  right: var(--space-20);
   z-index: 1000;
 }
 
-.nav-content {
+.language-dropdown {
+  position: relative;
+}
+
+.language-button {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 1rem 0;
+  gap: var(--space-8);
+  padding: var(--space-8) var(--space-12);
+  background: var(--dealership-white);
+  border: 2px solid var(--dealership-red);
+  border-radius: var(--radius-base);
+  color: var(--dealership-black);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--duration-fast) var(--ease-standard);
 }
 
-.logo h2 {
-  color: var(--dental-dark-blue);
-  font-size: 1.8rem;
-  font-weight: 700;
-  margin-bottom: 0.2rem;
+.language-button:hover {
+  background: var(--dealership-yellow-light);
+  box-shadow: var(--shadow-md);
 }
 
-.logo span {
-  color: var(--dental-text-light);
-  font-size: 0.9rem;
-  font-family: var(--font-family-english);
+.language-flag {
+  font-size: var(--font-size-lg);
 }
 
-.nav-links {
+.dropdown-arrow {
+  font-size: var(--font-size-sm);
+  transition: transform var(--duration-fast) var(--ease-standard);
+}
+
+.language-dropdown.active .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.language-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: var(--space-4);
+  background: var(--dealership-white);
+  border: 2px solid var(--dealership-red);
+  border-radius: var(--radius-base);
+  box-shadow: var(--shadow-lg);
+  min-width: 150px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all var(--duration-normal) var(--ease-standard);
+}
+
+.language-menu.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.language-option {
   display: flex;
-  gap: 2rem;
+  align-items: center;
+  gap: var(--space-8);
+  width: 100%;
+  padding: var(--space-10) var(--space-12);
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color var(--duration-fast) var(--ease-standard);
 }
 
-.nav-links a {
-  color: var(--dental-text-dark);
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
+.language-option:hover {
+  background: var(--dealership-yellow-light);
 }
 
-.nav-links a:hover {
-  color: var(--dental-dark-blue);
+.language-option:first-child {
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+}
+
+.language-option:last-child {
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+}
+
+/* RTL Support */
+[dir="rtl"] {
+  text-align: right;
+}
+
+[dir="rtl"] .language-switcher {
+  left: var(--space-20);
+  right: auto;
+}
+
+[dir="rtl"] .language-menu {
+  left: 0;
+  right: auto;
+}
+
+[dir="rtl"] .hero-contact {
+  direction: rtl;
+}
+
+[dir="rtl"] .contact-item {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .about-content {
+  direction: rtl;
+}
+
+/* Font Support */
+.arabic-font {
+  font-family: 'Noto Sans Arabic', var(--font-family-base);
+}
+
+.japanese-font {
+  font-family: 'Noto Sans JP', var(--font-family-base);
+}
+
+/* MIRAI Logo - Static Image with Red Background */
+.mirai-logo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--space-32);
+  height: 120px;
+  position: relative;
+}
+
+.mirai-logo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--dealership-red);
+  padding: var(--space-16);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  border: 3px solid var(--dealership-yellow);
+}
+
+.logo-image {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
+  filter: brightness(1.1) contrast(1.05);
+}
+
+.logo-text-fallback {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--dealership-white);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  letter-spacing: 0.1em;
 }
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(135deg, var(--dental-off-white) 0%, var(--dental-white) 100%);
-  padding: 120px 0 80px;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
+  background: linear-gradient(135deg, var(--dealership-red) 0%, var(--dealership-red-dark) 100%);
+  color: var(--dealership-white);
+  padding: 120px 0 80px 0;
+  text-align: center;
 }
 
 .hero-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.hero-text h1 {
-  font-size: 3rem;
-  font-weight: 700;
-  color: var(--dental-dark-blue);
-  margin-bottom: 0.5rem;
-  line-height: 1.2;
-}
-
-.hero-text h2 {
-  font-size: 1.5rem;
-  color: var(--dental-medium-blue);
-  font-family: var(--font-family-english);
-  margin-bottom: 1.5rem;
-  font-weight: 600;
-}
-
-.hero-text p {
-  font-size: 1.1rem;
-  color: var(--dental-text-light);
-  margin-bottom: 1rem;
-  line-height: 1.8;
+.hero-title {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-16);
+  color: var(--dealership-white);
 }
 
 .hero-subtitle {
-  font-family: var(--font-family-english) !important;
-  font-style: italic;
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--space-32);
+  color: var(--dealership-yellow-light);
+  font-weight: var(--font-weight-medium);
 }
 
-.hero-image img {
-  width: 100%;
-  height: 400px;
-  object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 20px 40px rgba(30, 58, 138, 0.1);
+.hero-contact {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-32);
+  margin-bottom: var(--space-32);
+  flex-wrap: wrap;
 }
 
-/* Buttons */
-.btn {
-  display: inline-block;
-  padding: 1rem 2rem;
-  border-radius: 8px;
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.contact-label {
+  font-weight: var(--font-weight-medium);
+  color: var(--dealership-yellow);
+}
+
+.contact-link {
+  color: var(--dealership-white);
   text-decoration: none;
-  font-weight: 600;
-  font-size: 1.1rem;
-  transition: all 0.3s ease;
-  border: none;
-  cursor: pointer;
-  text-align: center;
+  font-weight: var(--font-weight-medium);
+  transition: color var(--duration-fast) var(--ease-standard);
+}
+
+.contact-link:hover {
+  color: var(--dealership-yellow);
 }
 
 .btn--primary {
-  background: var(--dental-dark-blue);
-  color: var(--dental-white);
-  box-shadow: 0 4px 12px rgba(30, 58, 138, 0.3);
+  background: var(--dealership-yellow);
+  color: var(--dealership-black);
+  border: none;
+  font-weight: var(--font-weight-semibold);
+  transition: all var(--duration-normal) var(--ease-standard);
 }
 
 .btn--primary:hover {
-  background: var(--dental-medium-blue);
+  background: var(--dealership-yellow-dark);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(30, 58, 138, 0.4);
+  box-shadow: 0 4px 15px rgba(255, 193, 7, 0.3);
 }
 
-.btn--lg {
-  padding: 1.2rem 2.5rem;
-  font-size: 1.2rem;
-  margin-top: 1.5rem;
-}
-
-.btn--full-width {
-  width: 100%;
-}
-
-/* Sections */
-section {
+/* Brands Section */
+.brands {
   padding: 80px 0;
+  background: var(--dealership-gray-light);
 }
 
-.section-header {
+.section-title {
   text-align: center;
-  margin-bottom: 4rem;
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--dealership-black);
+  margin-bottom: var(--space-32);
 }
 
-.section-header h2 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: var(--dental-dark-blue);
-  margin-bottom: 0.5rem;
-}
-
-.section-header h3 {
-  font-size: 1.3rem;
-  color: var(--dental-medium-blue);
-  font-family: var(--font-family-english);
-  margin-bottom: 1rem;
-}
-
-.section-header p {
-  font-size: 1.1rem;
-  color: var(--dental-text-light);
-  max-width: 600px;
+.brands-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-24);
+  max-width: 800px;
   margin: 0 auto;
+}
+
+.brand-item {
+  background: var(--dealership-white);
+  padding: var(--space-24);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--duration-normal) var(--ease-standard);
+  border: 2px solid transparent;
+  min-height: 100px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.brand-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--dealership-yellow);
+}
+
+.brand-logo {
+  max-width: 100px;
+  max-height: 70px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: contrast(1.1) brightness(1.05);
+}
+
+/* Services Section */
+.services {
+  padding: 80px 0;
+  background: var(--dealership-white);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-24);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.service-item {
+  background: var(--dealership-gray-light);
+  padding: var(--space-24);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  border-left: 4px solid var(--dealership-red);
+  transition: all var(--duration-normal) var(--ease-standard);
+}
+
+.service-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.service-item h3 {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--dealership-red);
+  margin-bottom: var(--space-8);
+}
+
+.service-item p {
+  color: var(--dealership-gray);
+  margin: 0;
 }
 
 /* About Section */
 .about {
-  background: var(--dental-off-white);
+  padding: 80px 0;
+  background: var(--color-bg-1);
 }
 
 .about-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
-}
-
-.about-text p {
-  font-size: 1rem;
-  line-height: 1.8;
-  margin-bottom: 1.5rem;
-  color: var(--dental-text-dark);
-}
-
-.credentials {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-.credential {
-  text-align: center;
-  padding: 1.5rem;
-  background: var(--dental-white);
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(30, 58, 138, 0.1);
-}
-
-.credential h4 {
-  color: var(--dental-dark-blue);
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
-}
-
-.credential p {
-  color: var(--dental-text-light);
-  font-family: var(--font-family-english);
-  font-size: 0.9rem;
-}
-
-.about-image img {
-  width: 100%;
-  height: 400px;
-  object-fit: cover;
-  border-radius: 12px;
-}
-
-/* Services Section */
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-}
-
-.service-card {
-  background: var(--dental-white);
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(30, 58, 138, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(30, 58, 138, 0.15);
-}
-
-.service-card h4 {
-  color: var(--dental-dark-blue);
-  font-size: 1.3rem;
-  margin-bottom: 0.5rem;
-}
-
-.service-card p {
-  color: var(--dental-medium-blue);
-  font-family: var(--font-family-english);
-  font-weight: 600;
-  margin-bottom: 1rem;
-}
-
-.service-card span {
-  color: var(--dental-text-light);
-  line-height: 1.6;
-}
-
-/* Why Us Section */
-.why-us {
-  background: var(--dental-off-white);
-}
-
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 3rem;
-}
-
-.feature {
-  text-align: center;
-  background: var(--dental-white);
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(30, 58, 138, 0.1);
-}
-
-.feature-image {
-  margin-bottom: 1.5rem;
-}
-
-.feature-image img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-.feature h4 {
-  color: var(--dental-dark-blue);
-  font-size: 1.3rem;
-  margin-bottom: 1rem;
-}
-
-.feature p {
-  color: var(--dental-text-light);
-  line-height: 1.6;
-}
-
-/* Reservation Section */
-.reservation {
-  background: var(--dental-dark-blue);
-  color: var(--dental-white);
-}
-
-.reservation .section-header h2,
-.reservation .section-header h3 {
-  color: var(--dental-white);
-}
-
-.reservation .section-header p {
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.reservation-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  gap: var(--space-32);
   align-items: start;
 }
 
-.reservation-image img {
-  width: 100%;
-  height: 400px;
-  object-fit: cover;
-  border-radius: 12px;
+.about-text p {
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-normal);
+  color: var(--dealership-gray);
+  margin-bottom: var(--space-24);
 }
 
-.reservation-form-container {
-  background: var(--dental-white);
-  padding: 2.5rem;
-  border-radius: 12px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+.leadership h3 {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--dealership-red);
+  margin-bottom: var(--space-16);
 }
 
-.form-group {
-  margin-bottom: 1.5rem;
+.ceo-list {
+  margin-bottom: var(--space-24);
 }
 
-.form-label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: 600;
-  color: var(--dental-text-dark);
-  font-size: 0.95rem;
+.ceo-item {
+  background: var(--dealership-white);
+  padding: var(--space-16);
+  border-radius: var(--radius-base);
+  margin-bottom: var(--space-16);
+  border-left: 4px solid var(--dealership-red);
 }
 
-.form-control {
-  width: 100%;
-  padding: 0.75rem 1rem;
-  border: 2px solid #e2e8f0;
-  border-radius: 6px;
-  font-size: 1rem;
-  transition: border-color 0.3s ease;
-  background: var(--dental-white);
-  color: var(--dental-text-dark);
+[dir="rtl"] .ceo-item {
+  border-left: none;
+  border-right: 4px solid var(--dealership-red);
 }
 
-.form-control:focus {
-  outline: none;
-  border-color: var(--dental-dark-blue);
-  box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+.ceo-item h4 {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--dealership-black);
+  margin-bottom: var(--space-4);
 }
 
-select.form-control {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
-  background-position: right 0.5rem center;
-  background-repeat: no-repeat;
-  background-size: 1.5em 1.5em;
-  padding-right: 2.5rem;
-}
-
-textarea.form-control {
-  resize: vertical;
-  min-height: 100px;
-}
-
-.success-message,
-.error-message {
-  padding: 1.5rem;
-  border-radius: 8px;
-  margin-top: 1rem;
-  text-align: center;
-}
-
-.success-message {
-  background: #d1fae5;
-  color: #065f46;
-  border: 1px solid #a7f3d0;
-}
-
-.error-message {
-  background: #fee2e2;
-  color: #991b1b;
-  border: 1px solid #fecaca;
-}
-
-.hidden {
-  display: none;
+.ceo-item p {
+  color: var(--dealership-red);
+  font-weight: var(--font-weight-medium);
+  margin: 0;
 }
 
 /* Contact Section */
 .contact {
-  background: var(--dental-off-white);
+  padding: 80px 0;
+  background: var(--color-bg-2);
 }
 
 .contact-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact-info-center {
+  text-align: center;
+  background: var(--dealership-white);
+  padding: var(--space-32);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--dealership-yellow);
+}
+
+.contact-description {
+  font-size: var(--font-size-lg);
+  color: var(--dealership-gray);
+  margin-bottom: var(--space-32);
+  line-height: var(--line-height-normal);
+}
+
+.contact-details-large {
+  margin-bottom: var(--space-32);
+}
+
+.contact-item-large {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-12);
+  margin-bottom: var(--space-20);
+  padding: var(--space-16);
+  background: var(--dealership-gray-light);
+  border-radius: var(--radius-base);
+  border-left: 4px solid var(--dealership-red);
+}
+
+[dir="rtl"] .contact-item-large {
+  border-left: none;
+  border-right: 4px solid var(--dealership-red);
+  flex-direction: row-reverse;
+}
+
+.contact-label-large {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--dealership-black);
+  min-width: 80px;
+}
+
+.contact-link-large {
+  font-size: var(--font-size-lg);
+  color: var(--dealership-red);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-standard);
+}
+
+.contact-link-large:hover {
+  color: var(--dealership-red-dark);
+}
+
+.leadership-contact {
+  border-top: 2px solid var(--dealership-yellow);
+  padding-top: var(--space-24);
+}
+
+.leadership-contact h3 {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--dealership-red);
+  margin-bottom: var(--space-20);
+}
+
+.ceo-contact-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: start;
+  gap: var(--space-16);
 }
 
-.contact-info {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+.ceo-contact-item {
+  background: var(--dealership-gray-light);
+  padding: var(--space-16);
+  border-radius: var(--radius-base);
+  border-left: 4px solid var(--dealership-yellow-dark);
 }
 
-.contact-item {
-  background: var(--dental-white);
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(30, 58, 138, 0.1);
+[dir="rtl"] .ceo-contact-item {
+  border-left: none;
+  border-right: 4px solid var(--dealership-yellow-dark);
 }
 
-.contact-item h4 {
-  color: var(--dental-dark-blue);
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
+.ceo-contact-item h4 {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--dealership-black);
+  margin-bottom: var(--space-4);
 }
 
-.contact-item p {
-  color: var(--dental-text-light);
-  margin-bottom: 0.3rem;
+.ceo-contact-item p {
+  color: var(--dealership-red);
+  font-weight: var(--font-weight-medium);
+  margin: 0;
+  font-size: var(--font-size-md);
 }
 
-.contact-image img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 12px;
+/* Language Transition Effects */
+.fade-transition {
+  opacity: 0;
+  transition: opacity var(--duration-normal) var(--ease-standard);
 }
 
-/* Footer */
-.footer {
-  background: var(--dental-dark-blue);
-  color: var(--dental-white);
-  padding: 2rem 0;
-}
-
-.footer-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.footer-logo h3 {
-  color: var(--dental-white);
-  font-size: 1.5rem;
-  margin-bottom: 0.3rem;
-}
-
-.footer-logo p {
-  color: rgba(255, 255, 255, 0.8);
-  font-family: var(--font-family-english);
-}
-
-.footer-text p {
-  color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 0.2rem;
-  text-align: right;
-}
-
-/* Loading state for button */
-.btn.loading {
-  opacity: 0.7;
-  pointer-events: none;
-}
-
-.btn.loading::after {
-  content: "";
-  width: 16px;
-  height: 16px;
-  border: 2px solid transparent;
-  border-top: 2px solid currentColor;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-  margin-left: 8px;
-  display: inline-block;
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
+.fade-transition.active {
+  opacity: 1;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .hero-content,
-  .about-content,
-  .reservation-content,
-  .contact-content {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+  .mirai-logo-container {
+    height: 100px;
+    margin-bottom: var(--space-24);
+  }
+
+  .mirai-logo {
+    padding: var(--space-12);
+  }
+
+  .logo-image {
+    height: 60px;
+  }
+
+  .logo-text-fallback {
+    font-size: var(--font-size-3xl);
+  }
+
+  .language-switcher {
+    top: var(--space-16);
+    right: var(--space-16);
   }
   
-  .hero-text h1 {
-    font-size: 2.2rem;
-  }
-  
-  .nav-links {
-    display: none;
-  }
-  
-  .credentials {
-    grid-template-columns: 1fr;
-  }
-  
-  .services-grid,
-  .features-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .footer-content {
-    flex-direction: column;
-    text-align: center;
-    gap: 1rem;
-  }
-  
-  section {
-    padding: 60px 0;
+  [dir="rtl"] .language-switcher {
+    left: var(--space-16);
+    right: auto;
   }
   
   .hero {
-    padding: 100px 0 60px;
-    min-height: auto;
+    padding: 80px 0 60px 0;
+  }
+  
+  .hero-title {
+    font-size: var(--font-size-3xl);
+  }
+  
+  .hero-contact {
+    flex-direction: column;
+    gap: var(--space-16);
+  }
+  
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: var(--space-24);
+  }
+  
+  .brands-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-16);
+  }
+  
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-16);
+  }
+  
+  .brands,
+  .about,
+  .contact,
+  .services {
+    padding: 60px 0;
+  }
+  
+  .contact-info-center {
+    padding: var(--space-24);
+  }
+  
+  .ceo-contact-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .contact-item-large {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-8);
+  }
+  
+  .contact-label-large {
+    min-width: auto;
   }
 }
 
 @media (max-width: 480px) {
-  .container {
-    padding: 0 15px;
+  .mirai-logo-container {
+    height: 80px;
+  }
+
+  .mirai-logo {
+    padding: var(--space-8);
+  }
+
+  .logo-image {
+    height: 50px;
+  }
+
+  .logo-text-fallback {
+    font-size: var(--font-size-2xl);
+  }
+
+  .hero-title {
+    font-size: var(--font-size-2xl);
   }
   
-  .hero-text h1 {
-    font-size: 1.8rem;
+  .hero-subtitle {
+    font-size: var(--font-size-lg);
   }
   
-  .section-header h2 {
-    font-size: 2rem;
+  .section-title {
+    font-size: var(--font-size-2xl);
   }
   
-  .reservation-form-container {
-    padding: 1.5rem;
+  .brands-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .brand-item {
+    padding: var(--space-16);
+    min-height: 80px;
+  }
+  
+  .brand-logo {
+    max-width: 80px;
+    max-height: 50px;
+  }
+  
+  .contact-info-center {
+    padding: var(--space-16);
+  }
+  
+  .contact-item-large {
+    padding: var(--space-12);
+  }
+  
+  .language-button {
+    padding: var(--space-6) var(--space-10);
+    font-size: var(--font-size-sm);
+  }
+  
+  .language-option {
+    padding: var(--space-8) var(--space-10);
+    font-size: var(--font-size-sm);
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Enhanced scroll behavior */
+.scroll-target {
+  scroll-margin-top: 20px;
+}
+
+/* Animation for brand logos */
+.brand-item {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.brand-item.animate-in {
+  animation: slideInUp 0.6s ease-out;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
