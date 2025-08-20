@@ -75,7 +75,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23ffffff" opacity="0.03"/><circle cx="75" cy="75" r="1" fill="%23ffffff" opacity="0.03"/><circle cx="50" cy="10" r="0.5" fill="%23ffffff" opacity="0.02"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23ffffff" opacity="0.03"/><circle cx="75" cy="75" r="1" fill="%23ffffff" opacity="0.02"/><circle cx="50" cy="10" r="0.5" fill="%23ffffff" opacity="0.02"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
     opacity: 0.5;
 }
 
@@ -86,23 +86,16 @@ body {
     position: relative;
 }
 
-.logo-text {
-    font-size: clamp(4rem, 8vw, 8rem);
-    font-weight: 800;
-    color: #ffffff;
-    text-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
-    letter-spacing: 0.1em;
+.logo-image {
+    max-width: 300px;
+    height: auto;
+    filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.3));
+    transition: all 0.3s ease;
 }
 
-.tire {
-    color: #00d4ff;
-    text-shadow: 0 0 20px rgba(0, 212, 255, 0.8);
-    animation: rotate 3s linear infinite;
-}
-
-@keyframes rotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+.logo-image:hover {
+    filter: drop-shadow(0 0 30px rgba(0, 212, 255, 0.5));
+    transform: scale(1.05);
 }
 
 .hero-title {
@@ -386,34 +379,13 @@ body {
 }
 
 .footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
+    text-align: center;
 }
 
-.footer-main p {
-    color: #cccccc;
-    font-size: 1rem;
-    margin: 0;
-}
-
-.footer-rights p {
+.footer-content p {
     color: #888888;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     margin: 0;
-}
-
-.whatsapp-link {
-    color: #00d4ff;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.whatsapp-link:hover {
-    color: #00ffff;
-    text-decoration: underline;
 }
 
 /* Responsive Design */
@@ -447,9 +419,8 @@ body {
         font-size: 1.1rem;
     }
     
-    .footer-content {
-        flex-direction: column;
-        text-align: center;
+    .logo-image {
+        max-width: 250px;
     }
 }
 
@@ -466,8 +437,8 @@ body {
         font-size: 1.8rem;
     }
     
-    .logo-text {
-        font-size: 3rem;
+    .logo-image {
+        max-width: 200px;
     }
 }
 
