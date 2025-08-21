@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Studio - Freelance Web Designer</title>
+    <title>Contact - Portfolio Studio</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -30,10 +30,10 @@
                     <a href="index.html">Portfolio Studio</a>
                 </div>
                 <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
                     <li><a href="projects.html" class="nav-link">Projects</a></li>
                     <li><a href="about.html" class="nav-link">About</a></li>
-                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="contact.html" class="nav-link active">Contact</a></li>
                 </ul>
                 <div class="nav-toggle">
                     <span></span>
@@ -46,79 +46,125 @@
 
     <!-- Main Content -->
     <main class="main">
-        <!-- Hero Section -->
-        <section class="hero">
+        <!-- Contact Hero Section -->
+        <section class="contact-hero">
             <div class="container">
-                <div class="hero-content">
-                    <div class="hero-label">Freelance Web Designer</div>
-                    <div class="hero-location">Located in Canada</div>
-                    <div class="hero-description">
-                        I believe in creating digital experiences that not only look beautiful but also solve real problems. Every project is an opportunity to push boundaries, challenge conventions, and deliver solutions that exceed expectations. With a focus on user-centered design and cutting-edge development, I transform ideas into impactful digital solutions that drive results and create lasting impressions.
+                <div class="contact-hero-content">
+                    <h1 class="contact-hero-title">Get in touch with me</h1>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Content -->
+        <section class="contact-content">
+            <div class="container">
+                <div class="contact-grid">
+                    <!-- Contact Information -->
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <h3>Phone</h3>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                        <div class="contact-item">
+                            <h3>Email</h3>
+                            <p>hello@portfoliostudio.com</p>
+                        </div>
+                        <div class="contact-item">
+                            <h3>Location</h3>
+                            <p>Located in Canada</p>
+                        </div>
                     </div>
-                    <div class="hero-buttons">
-                        <a href="about.html" class="btn btn--primary">More about me</a>
-                        <a href="about.html" class="btn btn--primary">More about me</a>
+
+                    <!-- Contact Form -->
+                    <div class="contact-form">
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn--primary">Send Message</button>
+                        </form>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Recent Work Section -->
-        <section class="recent-work">
+        <!-- FAQ Section -->
+        <section class="faq">
             <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Recent work</h2>
-                    <a href="projects.html" class="section-link">View all</a>
-                </div>
-                <div class="work-grid">
-                    <article class="work-card">
-                        <div class="work-card-image">
-                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Haven Project">
+                <h2 class="faq-title">Frequently Asked Questions</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            What's the cost of a website?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Website costs vary depending on complexity, features, and requirements. I provide custom quotes based on your specific needs and project scope.</p>
                         </div>
-                        <div class="work-card-content">
-                            <h3 class="work-card-title">Haven</h3>
-                            <div class="work-card-meta">
-                                <span class="work-card-category">Design</span>
-                                <span class="work-card-year">2025</span>
-                            </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            Do you offer website maintenance after launch?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, I offer ongoing maintenance packages to keep your website secure, updated, and performing optimally after launch.</p>
                         </div>
-                    </article>
-                    <article class="work-card">
-                        <div class="work-card-image">
-                            <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Kairo Project">
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            How long does it take to build a website?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Project timelines typically range from 2-8 weeks depending on complexity. I'll provide a detailed timeline during our initial consultation.</p>
                         </div>
-                        <div class="work-card-content">
-                            <h3 class="work-card-title">Kairo</h3>
-                            <div class="work-card-meta">
-                                <span class="work-card-category">Design</span>
-                                <span class="work-card-year">2024</span>
-                            </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            Can I update my website myself after it's built?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Absolutely! I build websites with user-friendly content management systems that allow you to easily update content, images, and basic information.</p>
                         </div>
-                    </article>
-                    <article class="work-card">
-                        <div class="work-card-image">
-                            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Monolith Project">
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            What platforms do you work with?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>I specialize in Webflow development and also work with custom HTML/CSS/JavaScript solutions. I can recommend the best platform for your specific needs.</p>
                         </div>
-                        <div class="work-card-content">
-                            <h3 class="work-card-title">Monolith</h3>
-                            <div class="work-card-meta">
-                                <span class="work-card-category">Development</span>
-                                <span class="work-card-year">2024</span>
-                            </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            Will my website be mobile-friendly?
+                            <span class="faq-icon"></span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, all websites I create are fully responsive and optimized for mobile devices, ensuring a great user experience across all screen sizes.</p>
                         </div>
-                    </article>
-                    <article class="work-card">
-                        <div class="work-card-image">
-                            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Echolot Project">
-                        </div>
-                        <div class="work-card-content">
-                            <h3 class="work-card-title">Echolot</h3>
-                            <div class="work-card-meta">
-                                <span class="work-card-category">Development</span>
-                                <span class="work-card-year">2023</span>
-                            </div>
-                        </div>
-                    </article>
+                    </div>
                 </div>
             </div>
         </section>

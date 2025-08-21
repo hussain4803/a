@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Portfolio Studio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Top Marquee Banner -->
+    <div class="marquee-banner">
+        <div class="marquee-content">
+            <span>PORTFOLIO STUDIO –</span>
+            <span>PORTFOLIO STUDIO –</span>
+            <span>PORTFOLIO STUDIO –</span>
+            <span>PORTFOLIO STUDIO –</span>
+            <span>PORTFOLIO STUDIO –</span>
+            <span>PORTFOLIO STUDIO –</span>
+            <span>PORTFOLIO STUDIO –</span>
+            <span>PORTFOLIO STUDIO –</span>
+        </div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <a href="index.html">Portfolio Studio</a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="projects.html" class="nav-link active">Projects</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Projects Hero Section -->
+        <section class="projects-hero">
+            <div class="container">
+                <div class="projects-hero-content">
+                    <h1 class="projects-hero-title">My work</h1>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filter Tabs -->
+        <section class="filter-tabs">
+            <div class="container">
+                <div class="filter-tabs-container">
+                    <button class="filter-tab active" data-filter="all">All</button>
+                    <button class="filter-tab" data-filter="design">Design</button>
+                    <button class="filter-tab" data-filter="development">Development</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Grid -->
+        <section class="projects-grid-section">
+            <div class="container">
+                <div class="projects-grid" id="projectsGrid">
+                    <article class="project-card" data-category="design">
+                        <div class="project-card-image">
+                            <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Kairo Project">
+                        </div>
+                        <div class="project-card-content">
+                            <h3 class="project-card-title">Kairo</h3>
+                            <div class="project-card-meta">
+                                <span class="project-card-year">2024</span>
+                                <span class="project-card-category">Design</span>
+                            </div>
+                            <a href="project-template.html" class="project-card-link">View</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-category="design">
+                        <div class="project-card-image">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Nebula Project">
+                        </div>
+                        <div class="project-card-content">
+                            <h3 class="project-card-title">Nebula</h3>
+                            <div class="project-card-meta">
+                                <span class="project-card-year">2022</span>
+                                <span class="project-card-category">Design</span>
+                            </div>
+                            <a href="project-template.html" class="project-card-link">View</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-category="design">
+                        <div class="project-card-image">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Haven Project">
+                        </div>
+                        <div class="project-card-content">
+                            <h3 class="project-card-title">Haven</h3>
+                            <div class="project-card-meta">
+                                <span class="project-card-year">2025</span>
+                                <span class="project-card-category">Design</span>
+                            </div>
+                            <a href="project-template.html" class="project-card-link">View</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-category="development">
+                        <div class="project-card-image">
+                            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Monolith Project">
+                        </div>
+                        <div class="project-card-content">
+                            <h3 class="project-card-title">Monolith</h3>
+                            <div class="project-card-meta">
+                                <span class="project-card-year">2024</span>
+                                <span class="project-card-category">Development</span>
+                            </div>
+                            <a href="project-template.html" class="project-card-link">View</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-category="development">
+                        <div class="project-card-image">
+                            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Echolot Project">
+                        </div>
+                        <div class="project-card-content">
+                            <h3 class="project-card-title">Echolot</h3>
+                            <div class="project-card-meta">
+                                <span class="project-card-year">2023</span>
+                                <span class="project-card-category">Development</span>
+                            </div>
+                            <a href="project-template.html" class="project-card-link">View</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-category="development">
+                        <div class="project-card-image">
+                            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Atlas Project">
+                        </div>
+                        <div class="project-card-content">
+                            <h3 class="project-card-title">Atlas</h3>
+                            <div class="project-card-meta">
+                                <span class="project-card-year">2023</span>
+                                <span class="project-card-category">Development</span>
+                            </div>
+                            <a href="project-template.html" class="project-card-link">View</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-brand">Portfolio Studio</h3>
+                    <p>Creating exceptional digital experiences that inspire and engage.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>hello@portfoliostudio.com</p>
+                    <p>+1 (555) 123-4567</p>
+                    <p>Located in Canada</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#style-guide">Style Guide</a></li>
+                        <li><a href="#licenses">Licenses</a></li>
+                        <li><a href="#changelog">Changelog</a></li>
+                        <li><a href="#instructions">Instructions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Social</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link">Facebook</a>
+                        <a href="#" class="social-link">Instagram</a>
+                        <a href="#" class="social-link">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Portfolio Studio. All rights reserved.</p>
+                <p>Powered by Webflow</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
