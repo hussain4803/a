@@ -1,335 +1,389 @@
-// Language switching functionality
+// DOM Content Loaded
 document.addEventListener('DOMContentLoaded', function() {
-    const languageButtons = document.querySelectorAll('.lang-btn');
-    const currentLang = 'en'; // Default language
-    
-    // Language data
-    const languages = {
-        en: {
-            dir: 'ltr',
-            fontFamily: 'Inter, sans-serif'
-        },
-        ar: {
-            dir: 'rtl',
-            fontFamily: 'Arial, sans-serif'
-        },
-        ja: {
-            dir: 'ltr',
-            fontFamily: 'Noto Sans JP, sans-serif'
-        }
-    };
-    
-    // Function to switch language
-    function switchLanguage(lang) {
-        // Update active button
-        languageButtons.forEach(btn => {
-            btn.classList.remove('active');
-            if (btn.dataset.lang === lang) {
-                btn.classList.add('active');
-            }
+    // Initialize all functionality
+    initNavigation();
+    initSmoothScrolling();
+    initScrollAnimations();
+    initParallaxEffects();
+    initFormHandling();
+    initLoadingAnimations();
+});
+
+// Navigation functionality
+function initNavigation() {
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    // Mobile menu toggle
+    if (hamburger) {
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
         });
-        
-        // Update document direction and font
-        document.documentElement.dir = languages[lang].dir;
-        document.documentElement.style.fontFamily = languages[lang].fontFamily;
-        
-        // Update all text content
-        const elements = document.querySelectorAll('[data-' + lang + ']');
-        elements.forEach(element => {
-            if (element.dataset[lang]) {
-                element.textContent = element.dataset[lang];
-            }
-        });
-        
-        // Store language preference
-        localStorage.setItem('preferred-language', lang);
     }
-    
-    // Event listeners for language buttons
-    languageButtons.forEach(btn => {
-        btn.addEventListener('click', function() {
-            const lang = this.dataset.lang;
-            switchLanguage(lang);
+
+    // Close mobile menu when clicking on a link
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
         });
     });
+
+    // Navbar background on scroll
+    window.addEventListener('scroll', function() {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 100) {
+            navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+            navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+        } else {
+            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            navbar.style.boxShadow = 'none';
+        }
+    });
+}
+
+// Smooth scrolling to sections
+function initSmoothScrolling() {
+    const navLinks = document.querySelectorAll('.nav-link');
     
-    // Load saved language preference
-    const savedLang = localStorage.getItem('preferred-language');
-    if (savedLang) {
-        switchLanguage(savedLang);
-    }
-    
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
+            
+            const targetId = this.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            
+            if (targetSection) {
+                const offsetTop = targetSection.offsetTop - 80; // Account for fixed navbar
+                
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
                 });
             }
         });
     });
-    
-    // Service CTA button functionality
-    document.querySelectorAll('.service-cta').forEach(button => {
-        button.addEventListener('click', function() {
-            const serviceName = this.closest('.service-card').querySelector('h3').textContent;
-            const contactInfo = document.querySelector('.contact-info');
-            
-            // Scroll to contact section
-            contactInfo.scrollIntoView({ behavior: 'smooth' });
-            
-            // Highlight the contact section briefly
-            contactInfo.style.animation = 'pulse 0.5s ease-in-out';
-            setTimeout(() => {
-                contactInfo.style.animation = '';
-            }, 500);
-        });
-    });
-    
-    // Intersection Observer for animations
+}
+
+// Scroll animations
+function initScrollAnimations() {
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
     };
-    
-    const observer = new IntersectionObserver((entries) => {
+
+    const observer = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
+                entry.target.classList.add('animate-in');
             }
         });
     }, observerOptions);
-    
-    // Observe all animated elements
-    document.querySelectorAll('.service-card, .brand-item, .contact-item').forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+
+    // Observe elements with data-aos attributes
+    const animatedElements = document.querySelectorAll('[data-aos]');
+    animatedElements.forEach(el => {
         observer.observe(el);
     });
-    
-    // Add pulse animation CSS
-    const style = document.createElement('style');
-    style.textContent = `
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.02); }
-            100% { transform: scale(1); }
-        }
-    `;
-    document.head.appendChild(style);
-    
-    // Contact information click handlers
-    document.querySelectorAll('.contact-item').forEach(item => {
-        item.addEventListener('click', function() {
-            const contactText = this.querySelector('p').textContent;
+
+    // Add animation classes to elements as they come into view
+    const animateOnScroll = function() {
+        const elements = document.querySelectorAll('.service-card, .project-card, .about-text, .about-image, .contact-info, .contact-form');
+        
+        elements.forEach((element, index) => {
+            const elementTop = element.getBoundingClientRect().top;
+            const elementVisible = 150;
             
-            // Copy contact info to clipboard if it's an email or phone number
-            if (contactText.includes('@') || contactText.includes('+')) {
-                navigator.clipboard.writeText(contactText).then(() => {
-                    // Show success message
-                    const originalText = this.querySelector('p').textContent;
-                    this.querySelector('p').textContent = 'Copied!';
-                    this.querySelector('p').style.color = '#00d4ff';
-                    
-                    setTimeout(() => {
-                        this.querySelector('p').textContent = originalText;
-                        this.querySelector('p').style.color = '#cccccc';
-                    }, 2000);
-                }).catch(err => {
-                    console.log('Could not copy text: ', err);
-                });
+            if (elementTop < window.innerHeight - elementVisible) {
+                element.style.animationDelay = `${index * 0.1}s`;
+                element.classList.add('animate-in');
             }
         });
-    });
+    };
+
+    // Initial check and scroll event
+    animateOnScroll();
+    window.addEventListener('scroll', animateOnScroll);
+}
+
+// Parallax effects for floating elements
+function initParallaxEffects() {
+    const floatingElements = document.querySelectorAll('.floating-element');
     
-    // Add hover effect for contact items
-    document.querySelectorAll('.contact-item').forEach(item => {
-        item.style.cursor = 'pointer';
-    });
-    
-    // Performance optimization: Lazy load images
-    if ('IntersectionObserver' in window) {
-        const imageObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    img.src = img.dataset.src || img.src;
-                    img.classList.remove('lazy');
-                    imageObserver.unobserve(img);
-                }
-            });
-        });
+    window.addEventListener('scroll', function() {
+        const scrolled = window.pageYOffset;
         
-        document.querySelectorAll('img[data-src]').forEach(img => {
-            imageObserver.observe(img);
+        floatingElements.forEach(element => {
+            const speed = element.getAttribute('data-speed') || 1;
+            const yPos = -(scrolled * speed * 0.5);
+            element.style.transform = `translateY(${yPos}px)`;
+        });
+    });
+}
+
+// Form handling
+function initFormHandling() {
+    const contactForm = document.querySelector('.contact-form form');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const subject = formData.get('subject');
+            const message = formData.get('message');
+            
+            // Simple validation
+            if (!name || !email || !subject || !message) {
+                showNotification('Please fill in all fields', 'error');
+                return;
+            }
+            
+            if (!isValidEmail(email)) {
+                showNotification('Please enter a valid email address', 'error');
+                return;
+            }
+            
+            // Simulate form submission
+            showNotification('Message sent successfully! We\'ll get back to you soon.', 'success');
+            this.reset();
         });
     }
+}
+
+// Email validation
+function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+// Notification system
+function showNotification(message, type = 'info') {
+    // Remove existing notifications
+    const existingNotifications = document.querySelectorAll('.notification');
+    existingNotifications.forEach(notification => notification.remove());
     
-    // Add scroll-to-top functionality
-    const scrollToTopBtn = document.createElement('button');
-    scrollToTopBtn.innerHTML = '↑';
-    scrollToTopBtn.className = 'scroll-to-top';
-    scrollToTopBtn.style.cssText = `
+    // Create notification element
+    const notification = document.createElement('div');
+    notification.className = `notification notification-${type}`;
+    notification.innerHTML = `
+        <div class="notification-content">
+            <span class="notification-message">${message}</span>
+            <button class="notification-close">&times;</button>
+        </div>
+    `;
+    
+    // Add styles
+    notification.style.cssText = `
         position: fixed;
-        bottom: 20px;
+        top: 20px;
         right: 20px;
-        width: 50px;
-        height: 50px;
-        background: linear-gradient(135deg, #00d4ff, #0099cc);
-        color: #000000;
-        border: none;
-        border-radius: 50%;
-        cursor: pointer;
-        font-size: 20px;
-        font-weight: bold;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-        z-index: 1000;
-        box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+        background: ${type === 'success' ? '#4CAF50' : type === 'error' ? '#f44336' : '#2196F3'};
+        color: white;
+        padding: 1rem 1.5rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        z-index: 10000;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        max-width: 400px;
     `;
     
-    document.body.appendChild(scrollToTopBtn);
+    // Add to page
+    document.body.appendChild(notification);
     
-    // Show/hide scroll-to-top button
-    window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 300) {
-            scrollToTopBtn.style.opacity = '1';
-            scrollToTopBtn.style.visibility = 'visible';
-        } else {
-            scrollToTopBtn.style.opacity = '0';
-            scrollToTopBtn.style.visibility = 'hidden';
+    // Animate in
+    setTimeout(() => {
+        notification.style.transform = 'translateX(0)';
+    }, 100);
+    
+    // Close button functionality
+    const closeBtn = notification.querySelector('.notification-close');
+    closeBtn.addEventListener('click', () => {
+        notification.style.transform = 'translateX(100%)';
+        setTimeout(() => notification.remove(), 300);
+    });
+    
+    // Auto remove after 5 seconds
+    setTimeout(() => {
+        if (notification.parentNode) {
+            notification.style.transform = 'translateX(100%)';
+            setTimeout(() => notification.remove(), 300);
         }
-    });
+    }, 5000);
+}
+
+// Loading animations
+function initLoadingAnimations() {
+    // Add loading class to elements
+    const loadingElements = document.querySelectorAll('.service-card, .project-card, .about-text, .about-image');
     
-    // Scroll to top functionality
-    scrollToTopBtn.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
-    
-    // Add hover effect for scroll-to-top button
-    scrollToTopBtn.addEventListener('mouseenter', () => {
-        scrollToTopBtn.style.transform = 'scale(1.1)';
-        scrollToTopBtn.style.boxShadow = '0 6px 20px rgba(0, 212, 255, 0.4)';
-    });
-    
-    scrollToTopBtn.addEventListener('mouseleave', () => {
-        scrollToTopBtn.style.transform = 'scale(1)';
-        scrollToTopBtn.style.boxShadow = '0 4px 15px rgba(0, 212, 255, 0.3)';
-    });
-    
-    // Add loading animation for page
-    window.addEventListener('load', () => {
-        document.body.style.opacity = '0';
-        document.body.style.transition = 'opacity 0.5s ease';
+    loadingElements.forEach((element, index) => {
+        element.classList.add('loading');
         
+        // Stagger the loading animations
         setTimeout(() => {
-            document.body.style.opacity = '1';
-        }, 100);
+            element.classList.add('loaded');
+        }, index * 100);
     });
+}
+
+// Enhanced scroll effects
+function initEnhancedScrollEffects() {
+    let ticking = false;
     
-    // Add keyboard navigation support
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            // Close any open modals or return to top
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        }
-    });
-    
-    // Add touch support for mobile devices
-    let touchStartY = 0;
-    let touchEndY = 0;
-    
-    document.addEventListener('touchstart', (e) => {
-        touchStartY = e.changedTouches[0].screenY;
-    });
-    
-    document.addEventListener('touchend', (e) => {
-        touchEndY = e.changedTouches[0].screenY;
-        handleSwipe();
-    });
-    
-    function handleSwipe() {
-        const swipeThreshold = 50;
-        const diff = touchStartY - touchEndY;
+    function updateScrollEffects() {
+        const scrolled = window.pageYOffset;
+        const parallax = scrolled * 0.5;
         
-        if (Math.abs(diff) > swipeThreshold) {
-            if (diff > 0) {
-                // Swipe up - could be used for navigation
-                console.log('Swipe up detected');
-            } else {
-                // Swipe down - could be used for navigation
-                console.log('Swipe down detected');
+        // Parallax effect for hero section
+        const hero = document.querySelector('.hero');
+        if (hero) {
+            hero.style.transform = `translateY(${parallax * 0.1}px)`;
+        }
+        
+        // Scale effect for service cards on scroll
+        const serviceCards = document.querySelectorAll('.service-card');
+        serviceCards.forEach((card, index) => {
+            const cardTop = card.getBoundingClientRect().top;
+            const cardVisible = 200;
+            
+            if (cardTop < window.innerHeight - cardVisible) {
+                const scale = Math.min(1, (window.innerHeight - cardTop) / cardVisible);
+                card.style.transform = `scale(${0.9 + scale * 0.1})`;
             }
+        });
+        
+        ticking = false;
+    }
+    
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(updateScrollEffects);
+            ticking = true;
         }
     }
     
-    // Add service card hover effects
-    document.querySelectorAll('.service-card').forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-10px) scale(1.02)';
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1)';
-        });
-    });
+    window.addEventListener('scroll', requestTick);
+}
+
+// Initialize enhanced scroll effects
+initEnhancedScrollEffects();
+
+// Add CSS for notifications
+const notificationStyles = document.createElement('style');
+notificationStyles.textContent = `
+    .notification-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+    }
     
-    // Add brand item hover effects
-    document.querySelectorAll('.brand-item').forEach(item => {
-        item.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-5px) scale(1.05)';
-        });
-        
-        item.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1)';
-        });
-    });
+    .notification-close {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
+        padding: 0;
+        line-height: 1;
+    }
     
-    // Initialize tooltips for better UX
-    document.querySelectorAll('[title]').forEach(element => {
-        element.addEventListener('mouseenter', function(e) {
-            const tooltip = document.createElement('div');
-            tooltip.className = 'tooltip';
-            tooltip.textContent = this.title;
-            tooltip.style.cssText = `
-                position: absolute;
-                background: rgba(0, 0, 0, 0.9);
-                color: white;
-                padding: 8px 12px;
-                border-radius: 6px;
-                font-size: 14px;
-                z-index: 10000;
-                pointer-events: none;
-                white-space: nowrap;
-            `;
-            
-            document.body.appendChild(tooltip);
-            
-            const rect = this.getBoundingClientRect();
-            tooltip.style.left = rect.left + (rect.width / 2) - (tooltip.offsetWidth / 2) + 'px';
-            tooltip.style.top = rect.top - tooltip.offsetHeight - 10 + 'px';
-            
-            this.tooltip = tooltip;
-        });
-        
-        element.addEventListener('mouseleave', function() {
-            if (this.tooltip) {
-                this.tooltip.remove();
-                this.tooltip = null;
-            }
-        });
-    });
+    .notification-close:hover {
+        opacity: 0.8;
+    }
+    
+    .animate-in {
+        animation: fadeInUp 0.8s ease-out forwards;
+    }
+    
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+`;
+
+document.head.appendChild(notificationStyles);
+
+// Performance optimization: Throttle scroll events
+function throttle(func, limit) {
+    let inThrottle;
+    return function() {
+        const args = arguments;
+        const context = this;
+        if (!inThrottle) {
+            func.apply(context, args);
+            inThrottle = true;
+            setTimeout(() => inThrottle = false, limit);
+        }
+    };
+}
+
+// Apply throttling to scroll events
+const throttledScrollHandler = throttle(function() {
+    // Scroll-based animations and effects
+    const scrolled = window.pageYOffset;
+    
+    // Add scroll-based classes to body
+    if (scrolled > 100) {
+        document.body.classList.add('scrolled');
+    } else {
+        document.body.classList.remove('scrolled');
+    }
+}, 16); // 60fps
+
+window.addEventListener('scroll', throttledScrollHandler);
+
+// Add scroll-based body class styles
+const scrollStyles = document.createElement('style');
+scrollStyles.textContent = `
+    body.scrolled .navbar {
+        background: rgba(255, 255, 255, 0.98) !important;
+        backdrop-filter: blur(20px);
+    }
+    
+    body.scrolled .nav-link::after {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+`;
+
+document.head.appendChild(scrollStyles);
+
+// Initialize everything when the page is fully loaded
+window.addEventListener('load', function() {
+    // Add a subtle entrance animation to the entire page
+    document.body.style.opacity = '0';
+    document.body.style.transition = 'opacity 0.5s ease';
+    
+    setTimeout(() => {
+        document.body.style.opacity = '1';
+    }, 100);
+    
+    // Trigger any additional animations
+    const heroTitle = document.querySelector('.hero-title');
+    if (heroTitle) {
+        heroTitle.style.animation = 'fadeInUp 1s ease-out 0.3s both';
+    }
+    
+    const heroSubtitle = document.querySelector('.hero-subtitle');
+    if (heroSubtitle) {
+        heroSubtitle.style.animation = 'fadeInUp 1s ease-out 0.6s both';
+    }
+    
+    const heroButtons = document.querySelector('.hero-buttons');
+    if (heroButtons) {
+        heroButtons.style.animation = 'fadeInUp 1s ease-out 0.9s both';
+    }
 });
